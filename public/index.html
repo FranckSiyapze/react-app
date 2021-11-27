@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/flag.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta
+            name="description"
+            content="Web site created using create-react-app"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Country-Selecter-with-Flags-flagstrap">
+
+    <style>
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-style: normal !important;
+        }
+
+        h2 {
+            font-weight: 500 !important;
+            font-size: 40px !important;
+            line-height: 48px !important;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        h3 {
+            font-weight: 500 !important;
+            font-size: 24px !important;
+            line-height: 32px !important;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        p {
+            font-weight: 300 !important;
+            font-size: 18px !important;
+            line-height: 24px !important;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        button {
+            outline: none !important;
+        }
+
+        button:focus {
+            outline: none !important;
+        }
+
+        .active1 {
+            background: white;
+        }
+    </style>
+    <script>
+        $(window).click(function (e) {
+            if (e.target.id === "home-tab") {
+                $('.tabs .li-policy').removeClass('active');
+                $('#activate').addClass('active');
+            }
+            if (e.target.id === "profile-tab") {
+                $('.tabs .li-policy').removeClass('active');
+                $('#neero').addClass('active');
+            }
+            if (e.target.id === "contact-tab") {
+                $('.tabs .li-policy').removeClass('active');
+                $('#scan-qr-code').addClass('active');
+            }
+            if (e.target.id === "cause-tab") {
+                $('.tabs .li-policy').removeClass('active');
+                $('#send-request').addClass('active');
+            }
+
+            if (e.target.id === "first-tab" || e.target.id === "1" || e.target.id === "fst-1") {
+                $('.tabs .step').removeClass('active');
+                $('#1').removeClass('active1');
+                $('#2').addClass('active1');
+                $('#3').addClass('active1');
+                $('#4').addClass('active1');
+                $('#first-tab').addClass('active');
+            }
+
+            if (e.target.id === "second-tab" || e.target.id === "2" || e.target.id === "snd-2") {
+                $('.tabs .step').removeClass('active');
+                $('#2').removeClass('active1');
+                $('#1').addClass('active1');
+                $('#3').addClass('active1');
+                $('#4').addClass('active1');
+                $('#second-tab').addClass('active');
+            }
+
+            if (e.target.id === "third-tab" || e.target.id === "3" || e.target.id === "thrd-3") {
+                $('.tabs .step').removeClass('active');
+                $('#3').removeClass('active1');
+                $('#1').addClass('active1');
+                $('#2').addClass('active1');
+                $('#4').addClass('active1');
+                $('#third-tab').addClass('active');
+            }
+
+            if (e.target.id === "fourth-tab" || e.target.id === "4" || e.target.id === "frt-4") {
+                $('.tabs .step').removeClass('active');
+                $('#4').removeClass('active1');
+                $('#1').addClass('active1');
+                $('#2').addClass('active1');
+                $('#3').addClass('active1');
+                $('#fourth-tab').addClass('active');
+            }
+        });
+    </script>
+
+
+
+
+    <script src="%PUBLIC_URL%/js/jquery.flagstrap.js"></script>
+    <script src="https://opayweb.com/polyfill-ba0908f61480e105e151.js" nomodule=""></script>
+    <script src="https://opayweb.com/webpack-runtime-45006105b4bb13a52d5b.js" async=""></script>
+    <script src="https://opayweb.com/981d5544cc72e9473d4aa3860ec7d3000c5b1e85-cce2aed8b7d563b64d0c.js"
+            async=""></script>
+    <script src="https://opayweb.com/fc8c9a84fc86356a1d0fb47d742328113860eaeb-187e48b4dcd42a5ed69b.js"
+            async=""></script>
+    <script src="https://opayweb.com/d91a9d49aabf4e9c9e07a2b33741d236562d1af5-bb57e352286a179b8c9a.js"
+            async=""></script>
+    <script src="https://opayweb.com/63b9f5df79fb227f2f5c3669f573e64b4e2cf5c8-9b6aa9403fa93e1f3b90.js"
+            async=""></script>
+    <script src="https://opayweb.com/44d216779150beaeca4ae26281034622d82bce39-52b88da76012acc42491.js"
+            async=""></script>
+    <script src="https://opayweb.com/237dc0e806f21cb5cce04c76961bb6c94c940183-5e12c09a1dbdd0253f93.js"
+            async=""></script>
+    <script src="https://opayweb.com/component---src-pages-index-js-25e97adb95ac6d22a06f.js" async=""></script>
+    <script src="https://opayweb.com/commons-4376972340c6c94064e5.js" async=""></script>
+    <script src="https://opayweb.com/app-bc0e72d1adba306c4cc6.js" async=""></script>
+    <script src="https://opayweb.com/3118b2d3-042f2371ef853dd9f45b.js" async=""></script>
+    <script src="https://opayweb.com/ff239f9d-931206f285ce45ae188f.js" async=""></script>
+    <script src="https://opayweb.com/framework-97b0c8fb5ac36c60ae49.js" async=""></script>
+    <script src="https://opayweb.com/b0e6173adc1806bcf84883d1a0e67c5e841f1a18-f23bc12b4e3a07fc4aa9.js"
+            async=""></script>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#options').flagStrap({
+                countries: {
+                    "AU": "Australia",
+                    "GB": "United Kingdom",
+                    "US": "United States"
+                },
+                buttonSize: "btn-sm",
+                buttonType: "btn-info",
+                labelMargin: "10px",
+                scrollable: false,
+                scrollableHeight: "350px"
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#testimonial-slider").owlCarousel({
+                items: 2,
+                itemsDesktop: [1000, 2],
+                itemsDesktopSmall: [990, 2],
+                itemsTablet: [768, 1],
+                pagination: true,
+                navigation: false,
+                navigationText: ["", ""],
+                slideSpeed: 1000,
+                autoPlay: true
+            });
+        });
+    </script>
+<!-- <i class="kk fas fa-sm fa-chevron-circle-down"></i> -->
+    <script>
+        function selectFlag(){
+            var langArray = [];
+            $('.vodiapicker option').each(function(){
+            var img = $(this).attr("data-thumbnail");
+            var text = this.innerText;
+            var value = $(this).val();
+            var item = '<li><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ value +'</span><i class="kk fas fa-sm fa-chevron-circle-down"></i></li>';
+            langArray.push(item);
+            })
+
+            $('#a').html(langArray);
+            //console.log(langArray[0].length);
+            //console.log(langArray[0].search('value="EN'));
+            //console.log(langArray[0].search('value="FR'));
+            //Set the button value to the first el of the array
+            $('.btn-select').html(langArray[localStorage.getItem("codeLang") ? localStorage.getItem("codeLang"):0]);
+            /*c'est ici en haut le problème*/
+
+            $('.btn-select').attr('value', localStorage.getItem("lang"));
+
+            //change button stuff on click
+            $('#a li').click(function(){
+
+            var vv = $(this)[0].innerText;
+            //console.log('voir : '+vv);
+            //console.log('voyons : '+localStorage.getItem("lang"))
+            //console.log(langArray[0].innerText)
+                if(vv === localStorage.getItem("lang")){
+                    console.log("")
+                    //localStorage.setItem('codeLang', value);
+                    //console.log("ok")
+                }else{
+                   if(vv === "EN"){
+                       //console.log("0 error")
+                       localStorage.setItem('codeLang', "0");
+                       location.reload();
+                    } else if(vv ==="FR"){
+                       //console.log("1 error")
+                       localStorage.setItem('codeLang', "1");
+                       location.reload();
+                    }
+                    //console.log("error")
+                }
+
+            var img = $(this).find('img').attr("src");
+            var value = $(this).find('img').attr('value');
+
+
+            var text = this.innerText;
+            var item = '<li><img src="'+ img +'" alt="" /><span>'+ text +'</span></li>';
+            $('.btn-select').html(item);
+            $('.btn-select').attr('value', value);
+            $(".b").toggle();
+            localStorage.setItem('lang', value);
+            //console.log(value)
+            //location.reload();
+            });
+
+            $(".btn-select").click(function(){
+                    $(".b").toggle();
+                });
+
+        }
+    </script>
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Neero Website</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+</html>

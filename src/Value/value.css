@@ -1,0 +1,45 @@
+.container {
+    max-width: 1200px !important;
+}
+
+.dark-mode {
+    background: rgb(245, 247, 250);
+    color: black !important;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+p {
+
+    font-size: 16px !important;
+}
+
+.css {
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 37.5px;
+    padding-right: 37.5px;
+}
+
+.gap-v-16 {
+    margin-top: 24px;
+}
+
+.gap-v-16 > * + * {
+    margin-top: 24px;
+}
+
+.item-title {
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-small {
+    line-height: 24px;
+    font-size: 16px !important;
+    font-weight: 300;
+    text-align: left;
+}

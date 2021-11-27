@@ -1,0 +1,132 @@
+nav {
+    display: block;
+}
+
+.navbar-top {
+    background: white;
+    box-shadow: none;
+    padding: 16px 0px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    width: 100%;
+    z-index: 6;
+}
+
+.juZnzw {
+    color: rgb(44, 62, 80);
+    cursor: pointer;
+    display: flex;
+    font-family: "Graphik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 0.75em;
+    position: relative;
+    line-height: 22px;
+}
+
+.jELMTB ul {
+    -webkit-box-align: center;
+    align-items: flex-start;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.rounded-button, .rounded-button:hover {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    background-color: #6B5AED;
+    transition: all 0.2s ease 0s;
+    font-family: Roboto, sans-serif;
+    border-radius: 5px
+}
+
+.jganqX {
+    display: none;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+}
+
+.jrGvPX {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.subHeader {
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+
+@media screen and (min-width: 36em) {
+    .subHeader {
+        max-width: 540px;
+    }
+
+}
+
+@media screen and (min-width: 48em) {
+    .topHeader {
+        font-size: 14px;
+    }
+
+    .subHeader {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .navbar-top {
+        padding: 8px 0px;
+    }
+
+    .subHeader {
+        max-width: 960px;
+    }
+
+    .hfLtQw {
+        display: inline-flex;
+    }
+
+    .juZnzw {
+        margin: 0px 0.69em;
+    }
+
+    .jELMTB ul {
+        /*margin-left: 50px;*/
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .subHeader {
+        max-width: 1200px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .jganqX {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    .jganqX {
+        display: block;
+        text-align: start;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0rem;
+        padding-left: .5rem;
+    }
+}

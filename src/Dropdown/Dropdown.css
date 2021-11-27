@@ -1,0 +1,64 @@
+.dQHOsO{
+    padding: 40px 0px 0px;
+    margin-top: 190px;
+}
+
+.subHeader {
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+
+.bGatzU{
+    animation: 4s ease 0s infinite normal forwards running gqxYGB;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+[role-button], a {
+    touch-action: manipulation;
+}
+a{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+@media screen and (min-width: 36em){
+    .dQHOsO{
+        margin-top: 40px;
+    }
+    .subHeader {
+            max-width: 540px;
+    }
+
+}
+
+@media screen and (min-width: 48em){
+    .dQHOsO{
+        margin-top: 40px;
+    }
+    .subHeader {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 62em){
+    .subHeader {
+        max-width: 960px;
+    }
+}
+
+
+@media screen and (min-width: 75em){
+    .dQHOsO{
+        padding: 60px 0px 50px;
+    }
+    .subHeader {
+        max-width: 1200px;
+    }
+}

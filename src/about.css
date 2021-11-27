@@ -1,0 +1,293 @@
+.sec-con {
+    position: relative;
+    z-index: 3;
+    background: transparent !important;
+
+}
+
+section.section--spc--background-sibling--bottom {
+    padding-bottom: 40px;
+}
+
+section.section--spc--hero-sibling--top {
+    padding-top: 40px;
+}
+
+.tw-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.container-section .reverse .text-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-right: 80px;
+    padding-left: 12px;
+}
+
+.container-section .text-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 80px;
+}
+
+
+@media (min-width: 1024px) {
+    .h-container {
+        max-width: 1240px;
+        margin: auto;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+    .container-section .img-container {
+        align-self: flex-end;
+    }
+
+    .md\:tw-text-left {
+        text-align: left;
+    }
+}
+
+
+.tw-text-center {
+    text-align: center;
+}
+
+.tw-flex-col {
+    flex-direction: column;
+}
+
+.tw-flex {
+    display: flex;
+}
+
+
+.h-container {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.container-section .container {
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.body-regular, .body-bold {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    color: #262a3e;
+}
+
+.section-container[data-v-4a248340] {
+    max-width: 1070px;
+    margin: auto;
+}
+
+@media (min-width: 1201px) {
+    .section-container[data-v-4a248340] {
+        padding: 96px 0;
+    }
+}
+
+.section-container[data-v-4a248340] {
+    /*padding: 56px 20px;*/
+}
+
+.section-container > section[data-v-4a248340] {
+    margin-bottom: 96px;
+}
+
+h2[data-v-4a248340] {
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+h2[data-v-5713928d] {
+    font-size: 3.2rem;
+}
+
+h1[data-v-4a248340], h2[data-v-4a248340], h3[data-v-4a248340], h4[data-v-4a248340], h5[data-v-4a248340], h6[data-v-4a248340] {
+    font-weight: 300;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+
+}
+
+.statistics-container .info p[data-v-5713928d] {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p[data-v-5713928d] {
+    margin: 16px 0;
+}
+
+.bgg {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/5sBzKu8csjlEc2Ni15op1i/49f98ee882619c93612d9c4fa6d2a6fe/Phone.png');
+}
+
+@media (min-width: 1025px) {
+    h2[data-v-4a248340] {
+        font-size: 5.6rem;
+    }
+
+    h2[data-v-5713928d] {
+        font-size: 5.6rem;
+    }
+
+    .statistics-container .info p[data-v-5713928d] {
+        font-size: 2.4rem;
+    }
+}
+
+.section-container > section[data-v-4a248340] {
+    margin-bottom: 96px;
+}
+
+.statistic-boxes[data-v-4a248340] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.statistic-boxes .block[data-v-4a248340] {
+    margin-bottom: 24px;
+    background-color: #f5f5f6;
+    padding: 32px;
+}
+
+@media (min-width: 769px) {
+    .statistic-boxes .block[data-v-4a248340]:nth-child(5n+1) {
+        height: 226px;
+        width: calc(55% - 24px);
+        margin-right: 24px;
+    }
+
+    .statistic-boxes .block[data-v-4a248340]:nth-child(5n+2) {
+        height: 226px;
+        width: 45%;
+    }
+
+    .statistic-boxes .block[data-v-4a248340]:nth-child(5n+3) {
+        height: 344px;
+        width: calc(43% - 24px);
+        margin-right: 24px;
+    }
+
+    .statistic-boxes .block[data-v-4a248340]:nth-child(5n+4) {
+        height: 344px;
+        width: 57%;
+    }
+
+    .statistic-boxes .block[data-v-4a248340]:nth-child(5n+5) {
+        height: 275px;
+        width: 100%;
+    }
+
+    .statistic-boxes .block[data-v-4a248340]:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+.statistics-container.left[data-v-5713928d] {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.statistics-container[data-v-5713928d] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.statistics-container .info h2[data-v-5713928d] {
+    margin: 0 0 4px;
+}
+
+h1[data-v-5713928d], h2[data-v-5713928d], h3[data-v-5713928d], h4[data-v-5713928d], h5[data-v-5713928d], h6[data-v-5713928d] {
+    font-weight: 300;
+}
+
+h1[data-v-5713928d], h2[data-v-5713928d] {
+    line-height: 1.1;
+}
+
+.statistics-container .icon-container.left[data-v-5713928d] {
+    margin-right: 24px;
+}
+
+.statistics-container .icon-container[data-v-5713928d] {
+    width: 100px;
+    height: 100px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.statistics-container .icon-container[data-v-5713928d] {
+    width: 100px;
+    height: 100px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.bgr {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/gA8t8yN70xKMtNiR8xynQ/1e1703eb1b8eec7f563ac4e788fd3cc8/Business.png');
+}
+
+.statistics-container.bottom[data-v-5713928d] {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.bgb {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/6dzg7HDTGohGiSbIk9oAj6/d80e853cc0f7954f40ac0565aa9be092/user.png');
+}
+
+.statistics-container .icon-container.bottom[data-v-5713928d] {
+    margin-top: 24px;
+}
+
+.bgb1 {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/4suwNZSvWTxfZEp38W2ZPM/ce20fba8e26adb5a3c8718481e4ff389/qr.png');
+}
+
+.bgr1 {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/3RngfsGzTYHXPcpyLK8frQ/fbe761b0f06f12f220ddd6dace6c27b2/Colour.png');
+}
+
+.statistics-container .icon-container.right[data-v-5713928d] {
+    margin-left: 24px;
+}
+
+.bgr2 {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/40cGpHgY6xIIMAnLxKxWL0/5246c5c2e0dedcf4f7b28cd655245404/x___o__kning_av_Swish_i_handeln_sedan_fo__rega__ende_a__r_3x__1_.png');
+}
+
+.bgr3 {
+    background-image: url('https://images.ctfassets.net/zrqoyh8r449h/29CqKtGHIHFlfeDW1gNAF8/74cbcd02a54810b513e8c86fa733d414/29___betalar_helst_med_Swish_pa___na__tet__a__ldrarna_18-44__Copy_2_3x.png');
+}

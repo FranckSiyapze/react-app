@@ -1,0 +1,133 @@
+.djpXrq {
+    background-color: rgba(31, 198, 157, 0.1);
+    background-image: url(https://opayweb.com/static/home-header-bg-ab1b6d94bea933170f2adb14fef2db0f.png);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 120px;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    margin-bottom: 10rem;
+}
+
+.chRYoP {
+    box-sizing: border-box;
+    /* margin: 0px 0px 3rem; */
+    min-width: 0px;
+    font-family: Graphik, sans-serif;
+    color: rgb(44, 62, 80);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.hYoBpr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.react-reveal{
+    animation-fill-mode: both;
+    animation-duration: 1000ms;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+    opacity: 1;
+    animation-name: react-reveal-851449991354388-1;
+}
+
+.dgsdGv {
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 16px 0px;
+}
+.crfbIs {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(31, 198, 157);
+    border-radius: 50%;
+    box-shadow: rgba(31, 198, 158,  0.04) 0px 4px 40px;
+    display: flex;
+    height: 50px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px auto 2rem;
+    width: 50px;
+}
+.ioGOPD {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.gLvwjU {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    color: rgb(52, 73, 94);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.fqaGje {
+    margin: 0px auto;
+    padding-top: 20px;
+}
+
+@media screen and (min-width: 36em){
+    .gLvwjU {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 48em){
+    .chRYoP {
+        font-size: 36px;
+    }
+    .ioGOPD {
+        font-size: 18px;
+    }
+    .gLvwjU {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 62em){
+    .djpXrq {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        margin-bottom: 10rem;
+    }
+    .chRYoP {
+        font-size: 44px;
+    }
+    .hYoBpr {
+        place-content: center space-between;
+        grid-template-columns: repeat(3, 1fr);
+        -webkit-box-pack: justify;
+        margin: 0px auto;
+    }
+    .dgsdGv {
+        display: flex;
+        flex-direction: column;
+        margin: 12px 24px;
+        padding: 28px 0px;
+    }
+    .gLvwjU {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 75em){
+
+}

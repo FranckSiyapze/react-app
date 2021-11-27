@@ -1,0 +1,36 @@
+{
+    "menu": {
+        "menu_loan": "How neero loan works?",
+        "menu_merchants":"Merchants",
+        "menu_partnersip":"PartnerShip",
+        "menu_documentation":"Documentation",
+        "menu_company":"Company",
+        "menu_joinus":"Join-us",
+        "create_account":"Create an account",
+        "menu_about":"About",
+        "menu_careers":"Careers",
+        "menu_blog":"Blog"
+    },
+    "banner":{
+        "title":"",
+        "tile_color":"",
+        "subtitle":""
+    },
+    "bloc_loan":{
+        "loan_tile":"",
+        "loan_tab_1":"",
+        "loan_tab_2":"",
+        "loan_tab_3":"",
+        "loan_tab_4":""
+    },
+    "bloc_better":{
+        "title":"",
+        "better_bloc1_title":"",
+        "better_bloc1_text":"",
+        "better_bloc2_title":"",
+        "better_bloc2_text":"",
+        "better_bloc3_title":"",
+        "better_bloc3_text":"",
+        "button":""
+    }
+}

@@ -1,0 +1,22 @@
+.branch-shape-container {
+    position: relative;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mt-sm-20, .my-sm-20 {
+    margin-top: 10rem !important;
+}
+
+.mt-sm-10, .my-sm-10 {
+    margin-top: 5rem !important;
+}
+.mt-md-10, .my-md-10 {
+    margin-top: 6rem !important;
+}

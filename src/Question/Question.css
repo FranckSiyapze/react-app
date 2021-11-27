@@ -1,0 +1,124 @@
+.eYsGRE{
+    margin-bottom: 20px;
+}
+
+.eqkrSr {
+    background-image: linear-gradient(
+-110.57deg
+, rgba(228, 255, 248, 0.1) -2.17%, rgb(228, 255, 248) 99.02%);
+}
+
+.eZRBYa {
+    box-sizing: border-box;
+    min-width: 0px;
+    margin: 0px auto;
+    padding: 6rem 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hpnIkm {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 80rem;
+}
+
+.aWEvY {
+    box-sizing: border-box;
+    margin: 0px 0px 2.8rem;
+    min-width: 0px;
+    font-family: Graphik, sans-serif;
+    color: rgb(44, 62, 80);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.eDtspB {
+    box-sizing: border-box;
+    margin: 0px 0px 3rem;
+    min-width: 0px;
+    color: rgb(52, 73, 94);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: start;
+    max-width: 80%;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.blkXlr {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    text-decoration: none;
+    color: rgb(31, 198, 157);
+    font-weight: 600;
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+.kyKJiR {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.kmGTha:not(:last-child) {
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 36em){
+    .eZRBYa {
+        max-width: 54rem;
+    }
+}
+
+@media screen and (min-width: 48em){
+    .eZRBYa {
+        max-width: 72rem;
+        padding-top: 9rem;
+        padding-bottom: 16rem;
+    }
+    .aWEvY {
+        font-size: 36px;
+    }
+    .eDtspB {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 62em){
+    .eDtspB {
+        text-align: left;
+    }
+    .eYsGRE{
+        margin-bottom: 170px;
+    }
+    .eqkrSr {
+        background-image: url(https://opayweb.com/static/inquires-a1b60239d470a6a2cabaaae03c1ee6fe.png), linear-gradient(
+        -110.57deg
+        , rgba(228, 255, 248, 0.1) -2.17%, rgb(228, 255, 248) 99.02%);
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+           /* margin-right: 100px;*/
+        }
+    .eZRBYa {
+        max-width: 96rem;
+    }
+    .aWEvY {
+        font-size: 44px;
+    }
+}
+
+@media screen and (min-width: 75em){
+    .eZRBYa {
+        max-width: 120rem;
+    }
+}

@@ -1,0 +1,109 @@
+.kcOBsA {
+    box-sizing: border-box;
+    margin: 0px 0px 2rem;
+    min-width: 0px;
+    font-family: Graphik, sans-serif;
+    font-size: 36px;
+    color: rgb(44, 62, 80);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+.dxAjQS {
+    padding: 160px 0px 0px;
+    position: relative;
+}
+.eMKCjl {
+    place-self: center;
+}
+
+.epZFEo {
+    width: 300px;
+}
+
+
+
+.cc1{
+    z-index: -101;
+    background-image: url('https://opayweb.com/static/ab1b6d94bea933170f2adb14fef2db0f/3bf79/home-header-bg.png');
+}
+
+.cc1:before, .cc1:after{
+    background-color: #E8FAF5;
+    position: absolute;
+}
+
+.dERzKy {
+    place-content: center;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    padding: 0px 0px 50px;
+}
+
+.kJVvVa {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.hdwlDS {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 18px;
+    color: rgb(44, 62, 80);
+    line-height: 1.5;
+    text-align: center;
+}
+img, video {
+    max-width: 100%;
+}
+
+@media (min-width: 62em) {
+    .kcOBsA {
+        text-align: left;
+    }
+    .epZFEo img {
+        object-fit: contain;
+    }
+    .epZFEo {
+        width: 500px;
+    }
+    .dxAjQS {
+        height: 590px;
+        overflow: hidden;
+    }
+    .dERzKy {
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        justify-content: center;
+        padding: 0px;
+    }
+    .kJVvVa {
+        align-items: flex-start;
+    }
+    .hdwlDS {
+        text-align: left;
+    }
+    .eMKCjl {
+        justify-self: end;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .epZFEo {
+        width: 400px;
+    }
+    .hdwlDS {
+        font-size: 18px;
+    }
+    .kcOBsA {
+        font-size: 48px;
+        margin-bottom: 3rem;
+    }
+}

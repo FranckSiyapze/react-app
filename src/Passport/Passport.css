@@ -1,0 +1,117 @@
+.dbNpnS {
+    box-sizing: border-box;
+    min-width: 0px;
+    max-width: 118rem;
+    margin: 8rem auto 6rem;
+}
+
+.kTakdN {
+    box-sizing: border-box;
+    margin: 0px 0px -0.5rem;
+    min-width: 0px;
+    font-family: Graphik, sans-serif;
+    color: rgb(44, 62, 80);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.ewSejN {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: inline;
+    border-bottom: 2px solid #6B5AED;
+    color: #6B5AED;
+}
+
+.eETszF {
+    box-sizing: border-box;
+    margin: 2rem 0px 0px;
+    min-width: 0px;
+    font-size: 14px;
+    line-height: 2;
+    color: rgb(44, 62, 80);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    text-align: center !important;
+}
+.hMmwTi {
+    max-width: 38rem;
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.ecCvbo {
+    width: 50%;
+    margin: 0px auto -4rem;
+}
+.dxXIau {
+    animation: 3s ease 0s infinite normal forwards running iaoopG;
+    left: 110px;
+    top: 150px;
+    width: 40px;
+    position: absolute !important;
+}
+
+@media screen and (min-width: 36em){
+    .ecCvbo {
+        width: 40%;
+        margin: 0px auto -4rem;
+    }
+    .dxXIau {
+        left: 120px;
+        top: 110px;
+        width: 30px;
+    }
+}
+
+@media screen and (min-width: 48em){
+    .kTakdN {
+        font-size: 36px;
+    }
+    .hMmwTi {
+        display: flex;
+    }
+    .ecCvbo {
+        width: 60%;
+        margin: 0px auto -4rem;
+    }
+    .dxXIau {
+        left: 100px;
+        top: 180px;
+        width: 40px;
+    }
+}
+
+@media screen and (min-width: 62em){
+    .kTakdN {
+        font-size: 44px;
+    }
+    .eETszF {
+        font-size: 18px;
+    }
+    .ecCvbo {
+        width: 50%;
+        margin-bottom: -4rem;
+    }
+    .dxXIau {
+        left: 40px;
+        top: 350px;
+        width: 60px;
+    }
+}
+
+@media screen and (min-width: 75em){
+    .ecCvbo {
+        width: 50%;
+        margin-bottom: -4rem;
+    }
+    .dxXIau {
+        left: 40px;
+        top: 350px;
+        width: 60px;
+    }
+}

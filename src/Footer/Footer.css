@@ -1,0 +1,269 @@
+.vodiapicker {
+    display: none;
+}
+
+#a {
+    padding-left: 0px;
+}
+
+#a img, .btn-select img {
+    width: 25px;
+
+}
+
+#a li {
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#a li:hover {
+    background-color: #F4F3F3;
+}
+
+#a li img {
+    margin: 5px;
+}
+
+#a li span, .btn-select li span {
+    margin-left: 3px;
+}
+
+/* item list */
+.kk {
+    padding-top: 5px;
+    width: 18%;
+    max-width: 350px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    /* border: 1px solid rgba(0,0,0,.15); */
+
+}
+
+#a i {
+    display: none;
+}
+
+.open {
+    display: show !important;
+}
+
+.btn-select {
+    margin-top: 10px;
+    width: 9%;
+    max-width: 350px;
+    height: 34px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+
+}
+
+.btn-select li {
+    list-style: none;
+    float: left;
+    padding-bottom: 0px;
+    display: flex;
+}
+
+.btn-select:hover li {
+    margin-left: 0px;
+}
+
+.btn-select:hover {
+    /* background-color: #F4F3F3; */
+    border: none;
+    /* box-shadow: inset 0 0px 0px 1px #ccc; */
+
+
+}
+
+.btn-select:focus {
+    outline: none;
+}
+
+.lang-select {
+    /* margin-left: 50px; */
+}
+
+
+.bXvnxP {
+    margin: 80px 0px 60px;
+    padding: 0px 0px 40px;
+}
+
+.kCzjQw {
+    display: grid;
+    grid-auto-flow: dense;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dfbeiq {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 3;
+    padding-left: 0px;
+}
+
+.hdtEpl {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    width: 100%;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.kRYITH {
+    display: none;
+    text-align: left;
+}
+
+.kRYITH .style__CTA-sc-t3n67n-5 {
+    margin-right: 10px;
+}
+
+.beKoVJ {
+    cursor: pointer;
+}
+
+[role="button"], a, area, button, input:not([type="range"]), label, select, summary, textarea {
+    touch-action: manipulation;
+}
+
+.jnBLHc ul {
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    margin: 15px 0px;
+}
+
+.iNbjXE {
+    width: 80px;
+    height: 30px;
+}
+
+.lisgjn {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-family: "Graphik", sans-serif;
+    line-height: 1.5;
+    color: rgb(44, 62, 80);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.glhWLL {
+    background: rgb(90, 113, 132);
+    opacity: 0.1;
+    height: 2px;
+    width: 100%;
+    grid-column: 1 / -1;
+    margin: 30px 0px;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0px;
+    overflow: visible;
+}
+
+.jOaive {
+    grid-column: 1 / -1;
+}
+
+.dFLfum {
+    box-sizing: border-box;
+    margin: 0px 0px 3rem;
+    min-width: 0px;
+    font-size: 16px;
+    color: rgba(44, 62, 80, 0.7);
+    font-weight: 700;
+    line-height: 1.9;
+    text-align: center;
+}
+
+.gMvCSG {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 16px;
+    color: rgba(44, 62, 80, 0.7);
+    line-height: 1.9;
+    text-align: center;
+}
+
+ol, ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cIpWyF ul li {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 36em) {
+}
+
+@media screen and (min-width: 48em) {
+    .dfbeiq {
+        grid-column: inherit;
+        padding-left: inherit;
+    }
+
+    .kCzjQw {
+        column-gap: 16px;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        -webkit-box-pack: start;
+        justify-content: start;
+    }
+
+    .hdtEpl {
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+    }
+
+    .lisgjn {
+        font-size: 18px;
+    }
+
+    .glhWLL {
+        margin: 30px 0px;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .kRYITH {
+        display: block;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        margin-top: 40px;
+    }
+
+    .lisgjn {
+        font-size: 18px;
+    }
+
+    .glhWLL {
+        margin: 80px 0px 30px;
+    }
+
+    .dFLfum {
+        text-align: left;
+    }
+
+    .gMvCSG {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .subHeader {
+        max-width: 1200px;
+    }
+}

@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html itemscope='' itemtype='http://schema.org/WebPage' lang='en'>
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <script>window.NREUM || (NREUM = {});
+    NREUM.info = {
+        "beacon": "bam.nr-data.net",
+        "errorBeacon": "bam.nr-data.net",
+        "licenseKey": "NRJS-3b5b64cd4c29d8f2d4c",
+        "applicationID": "438367190",
+        "transactionName": "JwoNEkpeD1wHExkGQQoEDg9bbhNRBQQZEVALEg==",
+        "queueTime": 103,
+        "applicationTime": 277,
+        "agent": ""
+    }</script>
+    <script>(window.NREUM || (NREUM = {})).loader_config = {
+        licenseKey: "NRJS-3b5b64cd4c29d8f2d4c",
+        applicationID: "438367190"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) {
+        function r(n) {
+            if (!e[n]) {
+                var i = e[n] = {exports: {}};
+                t[n][0].call(i.exports, function (e) {
+                    var i = t[n][1][e];
+                    return r(i || e)
+                }, i, i.exports)
+            }
+            return e[n].exports
+        }
+
+        if ("function" == typeof __nr_require) return __nr_require;
+        for (var i = 0; i < n.length; i++) r(n[i]);
+        return r
+    }({
+        1: [function (t, e, n) {
+            function r() {
+            }
+
+            function i(t, e, n) {
+                return function () {
+                    return o(t, [u.now()].concat(f(arguments)), e ? null : this, n), e ? void 0 : this
+                }
+            }
+
+            var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM;
+            "undefined" == typeof window.newrelic && (newrelic = s);
+            var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                p = "api-", l = p + "ixn-";
+            a(d, function (t, e) {
+                s[e] = i(p + e, !0, "api")
+            }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () {
+                return (new r).get()
+            };
+            var m = r.prototype = {
+                createTracer: function (t, e) {
+                    var n = {}, r = this, i = "function" == typeof e;
+                    return o(l + "tracer", [u.now(), t, n], r), function () {
+                        if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], n), i) try {
+                            return e.apply(this, arguments)
+                        } catch (t) {
+                            throw c.emit("fn-err", [arguments, this, t], n), t
+                        } finally {
+                            c.emit("fn-end", [u.now()], n)
+                        }
+                    }
+                }
+            };
+            a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) {
+                m[e] = i(l + e)
+            }), newrelic.noticeError = function (t, e) {
+                "string" == typeof t && (t = new Error(t)), o("err", [t, u.now(), !1, e])
+            }
+        }, {}], 2: [function (t, e, n) {
+            function r(t) {
+                if (NREUM.init) {
+                    for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++) if (e = e[n[r]], "object" != typeof e) return;
+                    return e = e[n[n.length - 1]]
+                }
+            }
+
+            e.exports = {getConfiguration: r}
+        }, {}], 3: [function (t, e, n) {
+            function r() {
+                return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a
+            }
+
+            function i() {
+                return o
+            }
+
+            var o = (new Date).getTime(), a = o, f = t(10);
+            e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i
+        }, {}], 4: [function (t, e, n) {
+            function r(t) {
+                return !(!t || !t.protocol || "file:" === t.protocol)
+            }
+
+            e.exports = r
+        }, {}], 5: [function (t, e, n) {
+            function r(t, e) {
+                var n = t.getEntries();
+                n.forEach(function (t) {
+                    "first-paint" === t.name ? d("timing", ["fp", Math.floor(t.startTime)]) : "first-contentful-paint" === t.name && d("timing", ["fcp", Math.floor(t.startTime)])
+                })
+            }
+
+            function i(t, e) {
+                var n = t.getEntries();
+                n.length > 0 && d("lcp", [n[n.length - 1]])
+            }
+
+            function o(t) {
+                t.getEntries().forEach(function (t) {
+                    t.hadRecentInput || d("cls", [t])
+                })
+            }
+
+            function a(t) {
+                if (t instanceof m && !g) {
+                    var e = Math.round(t.timeStamp), n = {type: t.type};
+                    e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", ["fi", e, n])
+                }
+            }
+
+            function f(t) {
+                "hidden" === t && d("pageHide", [p.now()])
+            }
+
+            if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+                var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV;
+                if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+                    c = new PerformanceObserver(r);
+                    try {
+                        c.observe({entryTypes: ["paint"]})
+                    } catch (v) {
+                    }
+                    u = new PerformanceObserver(i);
+                    try {
+                        u.observe({entryTypes: ["largest-contentful-paint"]})
+                    } catch (v) {
+                    }
+                    s = new PerformanceObserver(o);
+                    try {
+                        s.observe({type: "layout-shift", buffered: !0})
+                    } catch (v) {
+                    }
+                }
+                if ("addEventListener" in document) {
+                    var g = !1, h = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+                    h.forEach(function (t) {
+                        document.addEventListener(t, a, !1)
+                    })
+                }
+                l(f)
+            }
+        }, {}], 6: [function (t, e, n) {
+            function r(t, e) {
+                if (!i) return !1;
+                if (t !== i) return !1;
+                if (!e) return !0;
+                if (!o) return !1;
+                for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++) if (r[a] !== n[a]) return !1;
+                return !0
+            }
+
+            var i = null, o = null, a = /Version\/(\S+)\s+Safari/;
+            if (navigator.userAgent) {
+                var f = navigator.userAgent, c = f.match(a);
+                c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1])
+            }
+            e.exports = {agent: i, version: o, match: r}
+        }, {}], 7: [function (t, e, n) {
+            function r(t) {
+                function e() {
+                    t(a && document[a] ? document[a] : document[i] ? "hidden" : "visible")
+                }
+
+                "addEventListener" in document && o && document.addEventListener(o, e, !1)
+            }
+
+            e.exports = r;
+            var i, o, a;
+            "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState")
+        }, {}], 8: [function (t, e, n) {
+            function r(t, e) {
+                var n = [], r = "", o = 0;
+                for (r in t) i.call(t, r) && (n[o] = e(r, t[r]), o += 1);
+                return n
+            }
+
+            var i = Object.prototype.hasOwnProperty;
+            e.exports = r
+        }, {}], 9: [function (t, e, n) {
+            function r(t, e, n) {
+                e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
+                for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = t[e + r];
+                return o
+            }
+
+            e.exports = r
+        }, {}], 10: [function (t, e, n) {
+            e.exports = {exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart}
+        }, {}], ee: [function (t, e, n) {
+            function r() {
+            }
+
+            function i(t) {
+                function e(t) {
+                    return t && t instanceof r ? t : t ? u(t, c, a) : a()
+                }
+
+                function n(n, r, i, o, a) {
+                    if (a !== !1 && (a = !0), !l.aborted || o) {
+                        t && a && t(n, r, i);
+                        for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++) c[s].apply(f, r);
+                        var p = d[w[n]];
+                        return p && p.push([b, n, r, f]), f
+                    }
+                }
+
+                function o(t, e) {
+                    y[t] = v(t).concat(e)
+                }
+
+                function m(t, e) {
+                    var n = y[t];
+                    if (n) for (var r = 0; r < n.length; r++) n[r] === e && n.splice(r, 1)
+                }
+
+                function v(t) {
+                    return y[t] || []
+                }
+
+                function g(t) {
+                    return p[t] = p[t] || i(n)
+                }
+
+                function h(t, e) {
+                    l.aborted || s(t, function (t, n) {
+                        e = e || "feature", w[n] = e, e in d || (d[e] = [])
+                    })
+                }
+
+                var y = {}, w = {}, b = {
+                    on: o,
+                    addEventListener: o,
+                    removeEventListener: m,
+                    emit: n,
+                    get: g,
+                    listeners: v,
+                    context: e,
+                    buffer: h,
+                    abort: f,
+                    aborted: !1
+                };
+                return b
+            }
+
+            function o(t) {
+                return u(t, c, a)
+            }
+
+            function a() {
+                return new r
+            }
+
+            function f() {
+                (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {})
+            }
+
+            var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i();
+            e.exports.getOrSetContext = o, l.backlog = d
+        }, {}], gos: [function (t, e, n) {
+            function r(t, e, n) {
+                if (i.call(t, e)) return t[e];
+                var r = n();
+                if (Object.defineProperty && Object.keys) try {
+                    return Object.defineProperty(t, e, {value: r, writable: !0, enumerable: !1}), r
+                } catch (o) {
+                }
+                return t[e] = r, r
+            }
+
+            var i = Object.prototype.hasOwnProperty;
+            e.exports = r
+        }, {}], handle: [function (t, e, n) {
+            function r(t, e, n, r) {
+                i.buffer([t], r), i.emit(t, e, n)
+            }
+
+            var i = t("ee").get("handle");
+            e.exports = r, r.ee = i
+        }, {}], id: [function (t, e, n) {
+            function r(t) {
+                var e = typeof t;
+                return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () {
+                    return i++
+                })
+            }
+
+            var i = 1, o = "nr@id", a = t("gos");
+            e.exports = r
+        }, {}], loader: [function (t, e, n) {
+            function r() {
+                if (!R++) {
+                    var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[0];
+                    if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort();
+                    c(E, function (e, n) {
+                        t[e] || (t[e] = n)
+                    });
+                    var n = a();
+                    f("mark", ["onload", n + M.offset], null, "api"), f("timing", ["load", n]);
+                    var r = v.createElement("script");
+                    0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e)
+                }
+            }
+
+            function i() {
+                "complete" === v.readyState && o()
+            }
+
+            function o() {
+                f("mark", ["domContent", a() + M.offset], null, "api")
+            }
+
+            var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2),
+                l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document,
+                g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype,
+                b = !d(m.location);
+            NREUM.o = {
+                ST: setTimeout,
+                SI: m.setImmediate,
+                CT: clearTimeout,
+                XHR: y,
+                REQ: m.Request,
+                EV: m.Event,
+                PR: m.Promise,
+                MO: m.MutationObserver
+            };
+            var x = "" + location, E = {
+                beacon: "bam.nr-data.net",
+                errorBeacon: "bam.nr-data.net",
+                agent: "js-agent.newrelic.com/nr-1210.min.js"
+            }, O = y && w && w[g] && !/CriOS/.test(navigator.userAgent), M = e.exports = {
+                offset: a.getLastTimestamp(),
+                now: a,
+                origin: x,
+                features: {},
+                xhrWrappable: O,
+                userAgent: s,
+                disabled: b
+            };
+            if (!b) {
+                t(1), t(5), v[g] ? (v[g]("DOMContentLoaded", o, !1), m[g]("load", r, !1)) : (v[h]("onreadystatechange", i), m[h]("onload", r)), f("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                var R = 0
+            }
+        }, {}], "wrap-function": [function (t, e, n) {
+            function r(t, e) {
+                function n(e, n, r, c, u) {
+                    function nrWrapper() {
+                        var o, a, s, p;
+                        try {
+                            a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {}
+                        } catch (l) {
+                            i([l, "", [o, a, c], s], t)
+                        }
+                        f(n + "start", [o, a, c], s, u);
+                        try {
+                            return p = e.apply(a, o)
+                        } catch (m) {
+                            throw f(n + "err", [o, a, m], s, u), m
+                        } finally {
+                            f(n + "end", [o, a, p], s, u)
+                        }
+                    }
+
+                    return a(e) ? e : (n || (n = ""), nrWrapper[p] = e, o(e, nrWrapper, t), nrWrapper)
+                }
+
+                function r(t, e, r, i, o) {
+                    r || (r = "");
+                    var f, c, u, s = "-" === r.charAt(0);
+                    for (u = 0; u < e.length; u++) c = e[u], f = t[c], a(f) || (t[c] = n(f, s ? c + r : r, i, c, o))
+                }
+
+                function f(n, r, o, a) {
+                    if (!m || e) {
+                        var f = m;
+                        m = !0;
+                        try {
+                            t.emit(n, r, o, e, a)
+                        } catch (c) {
+                            i([c, n, r, o], t)
+                        }
+                        m = f
+                    }
+                }
+
+                return t || (t = s), n.inPlace = r, n.flag = p, n
+            }
+
+            function i(t, e) {
+                e || (e = s);
+                try {
+                    e.emit("internal-error", t)
+                } catch (n) {
+                }
+            }
+
+            function o(t, e, n) {
+                if (Object.defineProperty && Object.keys) try {
+                    var r = Object.keys(t);
+                    return r.forEach(function (n) {
+                        Object.defineProperty(e, n, {
+                            get: function () {
+                                return t[n]
+                            }, set: function (e) {
+                                return t[n] = e, e
+                            }
+                        })
+                    }), e
+                } catch (o) {
+                    i([o], n)
+                }
+                for (var a in t) l.call(t, a) && (e[a] = t[a]);
+                return e
+            }
+
+            function a(t) {
+                return !(t && t instanceof Function && t.apply && !t[p])
+            }
+
+            function f(t, e) {
+                var n = e(t);
+                return n[p] = t, o(t, n, s), n
+            }
+
+            function c(t, e, n) {
+                var r = t[e];
+                t[e] = f(r, n)
+            }
+
+            function u() {
+                for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n) e[n] = arguments[n];
+                return e
+            }
+
+            var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1;
+            e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u
+        }, {}]
+    }, {}, ["loader"]);</script>
+    <link rel="preload" href="/assets/icons-ae07d31b5cfa48c8a6a6b51eca448bd3e3b3470854f27de10373883948faa6c6.woff2"
+          as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/icons-4e7506dde06ad61a2e6725ac14665deef1131922f4e3f598b3e9f07c1e5964de.woff"
+          as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap"
+          as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap">
+    <title>100% online share capital deposit • Company creation • Qonto</title>
+    <link rel="stylesheet" media="screen"
+          href="/assets/layout/application-775a5a88e973e90a03993f0d8e6face12541455e12f0d563d567074b7c9b229b.css"
+          data-turbolinks-track="true"/>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Qonto",
+            "description": "The neobank for SMEs and freelancers. Qonto provides a fully featured business account with a simplified accounting flow.",
+            "url": "https://qonto.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "name": "QontoLogo",
+                "width": {
+                    "@type": "QuantitativeValue",
+                    "unitCode": "E37",
+                    "value": "439"
+                },
+                "height": {
+                    "@type": "QuantitativeValue",
+                    "unitCode": "E37",
+                    "value": "439"
+                },
+                "url": "https://qonto.com/homepage/logo-qonto.png"
+            },
+            "foundingDate": "Avril 2016",
+            "address": {
+                "addressLocality": "Paris",
+                "addressCountry": "France"
+            },
+            "founders": [
+                {
+                    "@type": "Person",
+                    "name": "Alexandre Prot"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Steve Anavi"
+                }
+            ],
+            "sameAs": [
+                "https://www.facebook.com/getqonto",
+                "https://twitter.com/getqonto",
+                "https://www.linkedin.com/company-beta/13205888/",
+                "https://www.instagram.com/getqonto/",
+                "https://dribbble.com/qonto",
+                "https://blog.qonto.com"
+            ]
+        }
+    </script>
+
+    <!-- AB Tasty -->
+    <script type="text/javascript" src="https://try.abtasty.com/d32cb725843f52849c3f4eea3a3e3a72.js"></script>
+
+    <!-- TRACKING -->
+    <!-- Segment.io -->
+
+    <script src="/assets/common/analytics/template_matching-a9123fbf9436c3c283d83d2986f594b0705ba1f7b96dc953f39a83babd678192.js"></script>
+    <script src="/assets/common/analytics/universe_matching-df1acfc08b5e3a7bf9dfa3ca80eadcf7fa391539a36af296bdb17e9064e213bc.js"></script>
+
+    <script type="text/javascript" defer>
+        // Used both in:
+        // * head_js_scripts.html.erb
+        // * x_card.html.erb
+        // It use functions from common/analytics/*matching.js
+        !function () {
+            var analytics = window.analytics = window.analytics || [];
+            if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+                analytics.invoked = !0;
+                analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+                analytics.factory = function (e) {
+                    return function () {
+                        var t = Array.prototype.slice.call(arguments);
+                        t.unshift(e);
+                        analytics.push(t);
+                        return analytics
+                    }
+                };
+                for (var e = 0; e < analytics.methods.length; e++) {
+                    var key = analytics.methods[e];
+                    analytics[key] = analytics.factory(key)
+                }
+                analytics.load = function (key, e) {
+                    var t = document.createElement("script");
+                    t.type = "text/javascript";
+                    t.async = !0;
+                    t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+                    var n = document.getElementsByTagName("script")[0];
+                    n.parentNode.insertBefore(t, n);
+                    analytics._loadOptions = e
+                };
+                analytics.SNIPPET_VERSION = "4.13.1";
+            }
+        }();
+    </script>
+
+    <script type="text/javascript">
+        window.gdprAppliesGlobally = true;
+        (function () {
+            function a(e) {
+                if (!window.frames[e]) {
+                    if (document.body && document.body.firstChild) {
+                        var t = document.body;
+                        var n = document.createElement("iframe");
+                        n.style.display = "none";
+                        n.name = e;
+                        n.title = e;
+                        t.insertBefore(n, t.firstChild)
+                    } else {
+                        setTimeout(function () {
+                            a(e)
+                        }, 5)
+                    }
+                }
+            }
+
+            function e(n, r, o, c, s) {
+                function e(e, t, n, a) {
+                    if (typeof n !== "function") {
+                        return
+                    }
+                    if (!window[r]) {
+                        window[r] = []
+                    }
+                    var i = false;
+                    if (s) {
+                        i = s(e, t, n)
+                    }
+                    if (!i) {
+                        window[r].push({command: e, parameter: t, callback: n, version: a})
+                    }
+                }
+
+                e.stub = true;
+
+                function t(a) {
+                    if (!window[n] || window[n].stub !== true) {
+                        return
+                    }
+                    if (!a.data) {
+                        return
+                    }
+                    var i = typeof a.data === "string";
+                    var e;
+                    try {
+                        e = i ? JSON.parse(a.data) : a.data
+                    } catch (t) {
+                        return
+                    }
+                    if (e[o]) {
+                        var r = e[o];
+                        window[n](r.command, r.parameter, function (e, t) {
+                            var n = {};
+                            n[c] = {returnValue: e, success: t, callId: r.callId};
+                            a.source.postMessage(i ? JSON.stringify(n) : n, "*")
+                        }, r.version)
+                    }
+                }
+
+                if (typeof window[n] !== "function") {
+                    window[n] = e;
+                    if (window.addEventListener) {
+                        window.addEventListener("message", t, false)
+                    } else {
+                        window.attachEvent("onmessage", t)
+                    }
+                }
+            }
+
+            e("__tcfapi", "__tcfapiBuffer", "__tcfapiCall", "__tcfapiReturn");
+            a("__tcfapiLocator");
+            (function (e) {
+                var t = document.createElement("script");
+                t.id = "spcloader";
+                t.type = "text/javascript";
+                t.defer = true;
+                t.src = "https://sdk.privacy-center.org/" + e + "/loader.js?target=" + document.location.hostname;
+                t.charset = "utf-8";
+                var n = document.getElementsByTagName("script")[0];
+                n.parentNode.insertBefore(t, n)
+            })("99e8835d-ab08-4716-a9f3-47e233bc25bf")
+        })();
+
+        function segmentLoadAndPage() {
+            // Segment load method
+            analytics.load(
+                "ktKifGyXnGLOazXulxQxhb1ZSr3henld",
+                {
+                    integrations: {
+                        // Syntax: '%Segment_Destination_Name%': Didomi.getUserConsentStatusForVendor('%Didomi_Vendor_SDK_Id%'),
+                        'Google Analytics': true, // because purpose: "Internal Analytics" (required)
+                        'Amplitude': Didomi.getUserConsentStatusForVendor('c:amplitude'),
+                        'Facebook Pixel': Didomi.getUserConsentStatusForVendor('c:fb-ads'),
+                        'Facebook Conversions API': Didomi.getUserConsentStatusForVendor('c:fb-ads'),
+                        'Google Ads (Classic)': Didomi.getUserConsentStatusForVendor('c:double-click'),
+                        'Google Tag Manager': true, // because purpose: "Technical cookies" (required)
+                        'LinkedIn Insight Tag': Didomi.getUserConsentStatusForVendor('c:linkedin'),
+                        'ActiveCampaign': true, // can't opt-out because qto_internal_analytics (required)
+                        'Bing Ads': Didomi.getUserConsentStatusForVendor('c:bing-ads'),
+                        'Hotjar': true, // because purpose: "Internal Analytics" (required)
+                        'Intercom': Didomi.getUserConsentStatusForVendor('c:intercom'),
+                        'Twitter Ads': Didomi.getUserConsentStatusForVendor('c:twitter'),
+                        'DoubleClick Floodlight': Didomi.getUserConsentStatusForVendor('c:double-click'),
+                        'AdWords Remarketing Lists': Didomi.getUserConsentStatusForVendor('c:double-click'),
+                        'Google Ads (Gtag)': Didomi.getUserConsentStatusForVendor('c:double-click'),
+                        'AdWords': Didomi.getUserConsentStatusForVendor('c:g-adwords')
+                    }
+                }
+            );
+
+            // Segment page method
+            analytics.page({
+                page_template: currentPageTemplate(),
+                page_universe: currentPageUniverse() || undefined,
+                page_country: location.pathname.substring(1, 3),
+                user_platform: /Mobi/i.test(window.navigator.userAgent) ? 'Web Mobile' : 'Web Desktop'
+            });
+        }
+
+        // Send info to data layer
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            event: 'static_datalayer',
+            page_template: currentPageTemplate(),
+            page_universe: currentPageUniverse() || undefined,
+            page_country: location.pathname.substring(1, 3),
+            user_platform: /Mobi/i.test(window.navigator.userAgent) ? 'Web Mobile' : 'Web Desktop'
+        });
+
+        window.didomiOnReady = window.didomiOnReady || [];
+        window.didomiOnReady.push(function (Didomi) {
+            // Didomi ready : the Didomi JS library is loaded
+            if (!Didomi.shouldConsentBeCollected()) {
+                // Consent has already been collected : Segment load and page
+                segmentLoadAndPage();
+            } else {
+                // Consent has not been collected yet
+                Didomi.on('consent.changed', function () {
+                    // Consent has been collected (changed for the first): Segment load and page
+                    segmentLoadAndPage();
+                });
+            }
+        });
+    </script>
+
+
+    <!-- Sentry without webpack -->
+    <script
+            src="https://browser.sentry-cdn.com/6.11.0/bundle.min.js"
+            integrity="sha384-c+8PXtRnYfCKsSEvgtDqFeJvhjltkNLIUB1vcWKW4EleABoS4jh87UrE+1nQXg+g"
+            crossorigin="anonymous"
+            defer
+    ></script>
+
+    <script
+            src="https://browser.sentry-cdn.com/6.11.0/bundle.tracing.min.js"
+            integrity="sha384-XuDodOP4mgLWA8eRlqZJWs+mtmznHF6ES/nOotK0fE7SHjj0Ec3YMVIzjh5ytsKH"
+            crossorigin="anonymous"
+    ></script>
+
+    <script>
+        Sentry.init({
+            dsn: "https://35663231e07d4a37b293a87c9c1795ef:3528a0740bdd4d6fad7f20e579385383@o74188.ingest.sentry.io/5380110",
+            environment: "production",
+            release: "qonto-homepage-js",
+            integrations: [new Sentry.Integrations.BrowserTracing()],
+
+            // We recommend adjusting this value in production, or using tracesSampler
+            // for finer control
+            tracesSampleRate: 1.0,
+
+            // Disable Session Health feature
+            // https://docs.sentry.io/platforms/javascript/configuration/options/#auto-session-tracking
+            autoSessionTracking: false,
+
+        });
+    </script>
+
+    <script src="/assets/application-78adc45efdee7c22de55b82d751ac9408a1bc0d7bee9e13c87ad6bbe09f99940.js" defer="defer"
+            data-turbolinks-track="true"></script>
+    <!-- SECTION PAGE ASSETS -->
+    <link rel="stylesheet" media="screen"
+          href="/assets/sections-fc0867d6cdb340ab4acfb46302b3d75d0e71888ff0a9de013eec2b24cf8395ff.css"
+          data-turbolinks-track="true"/>
+    <script src="/assets/sections-020ba7b5cf2bd797117e5a2bedeb98150c6c4e8743a9b12c39ec71958a0bf835.js" defer="defer"
+            data-turbolinks-track="true"></script>
+    <link rel="canonical" href="https://qonto.com/en/capital-deposit"/>
+    <link rel="alternate" href="https://qonto.com/en/capital-deposit" hreflang="en"/>
+
+    <!-- Misc head -->
+    <meta charset="utf-8"/>
+    <meta name="google" content="notranslate"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Favicon -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage"
+          content="/assets/favicon/ms-icon-144x144-02950ef4bd3fa63fa5799f7633d5f0e0eb51e435d25bb30b21298c9b40e96097.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="/assets/favicon/apple-icon-57x57-e49d61ef7d9a14aef97e50e10b924845c6f39d1c5ad240bf6cf7fb9647bf4fba.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="/assets/favicon/apple-icon-60x60-7729ff3c2617c7ff4972c76f3190ecee131f19b4f5def702316f40ea80fff342.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/assets/favicon/apple-icon-72x72-55137a73af369bc4c00c4be31730d4335b0ff1e65f86833b2184d6437e28b231.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="/assets/favicon/apple-icon-76x76-5edec5ea86a1bbb37322d6326d68f802cb8332ca7ce26abc8adce4fe7e43e9a4.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="/assets/favicon/apple-icon-114x114-0aceb3e603aa969e00bd87c38e85fc0c50a8d8c5f3f7b9c303831122fd7ee049.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="/assets/favicon/apple-icon-120x120-d17a15accd28ae5d5b14961ab64b35984fd14dd43717e975799d98977171cba1.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/assets/favicon/apple-icon-144x144-02950ef4bd3fa63fa5799f7633d5f0e0eb51e435d25bb30b21298c9b40e96097.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="/assets/favicon/apple-icon-152x152-a6685996fbdf546c5e740022ee48cdb5841c2139c50fd4a399f6113cd7e3c67a.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/assets/favicon/apple-icon-180x180-a346f6bfb9d5b4a15273be0615293073eadb7f3781cf2cd06d102314e97b31d8.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/assets/favicon/android-icon-192x192-7c10824c8c10e306c503b74e7c5be784ae53eab1013b3d67682c9ee64c32bb18.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/assets/favicon/favicon-32x32-3c072e22c772e7600adb1744f74c35e999e8174a832ff68488ef6a81c0d3355c.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/assets/favicon/favicon-96x96-345c59318f3a3fe06b0114fccef7307d493f87f0058346d3546f952dbe472692.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/assets/favicon/favicon-16x16-4e3e923afad2b2003d398f60d629ab0337cfdc061ab649d3a12fe181e009bc39.png">
+    <link rel="manifest"
+          href="/assets/favicon/manifest-27eca3e8297eb7ff340deb3849b210185a459b3845456aa4d0036f6d966b3518.json">
+
+    <!-- Generic metas for Prismic and Landing Pages -->
+    <!-- Misc head -->
+    <meta name="description"
+          content="Proceed with the online deposit of your share capital and receive your deposit certificate within 72h on average! Finalize your company registration and discover a tailor-made experience for business owners."/>
+
+    <!-- No index -->
+
+    <!-- Itemprop -->
+    <meta itemprop="name" content="100% online share capital deposit • Company creation • Qonto"/>
+    <meta itemprop="description"
+          content="Proceed with the online deposit of your share capital and receive your deposit certificate within 72h on average! Finalize your company registration and discover a tailor-made experience for business owners.">
+
+    <!-- OpenGraph card -->
+    <meta property="og:title" content="100% online share capital deposit • Company creation • Qonto">
+    <meta property="og:description"
+          content="Proceed with the online deposit of your share capital and receive your deposit certificate within 72h on average! Finalize your company registration and discover a tailor-made experience for business owners.">
+    <meta property="og:image" content="https://qonto.com/homepage/ogimage/og-image.jpg">
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@getqonto">
+    <meta name="twitter:title" content="100% online share capital deposit • Company creation • Qonto">
+    <meta name="twitter:description"
+          content="Proceed with the online deposit of your share capital and receive your deposit certificate within 72h on average! Finalize your company registration and discover a tailor-made experience for business owners.">
+
+
+    <!-- Itemprop -->
+    <meta itemprop="url" content="https://qonto.com/en/capital-deposit">
+
+    <!-- Domain verification for search console  -->
+    <meta name="google-site-verification" content="BXBLE6blQEo2oOg3cefWBGTWkJK3CBigOFdgXf-kEDY"/>
+    <meta name="google-site-verification" content="_wP15xcI_DjZPbefgDymNj28_DW-EpOcgLGniZPSdJA"/>
+    <meta name="google-site-verification" content="0mbh7b6VhDwKuehD9KY9e00EBTMIxwdBxl1pUVzn0-k"/>
+    <meta name="google-site-verification" content="v9gNrtYCcs5EX8Lr2cyk3oHaKHZhAcx3ak9kZ0kx0rk"/>
+
+    <!-- Smart App banner -->
+    <meta name="apple-itunes-app" content="app-id=1214811644">
+
+    <!-- Audisto Crawler -->
+    <meta name="audisto-confirm" content="5f92fa364a58c3010a534777322b0ed6d5a0e07b"/>
+
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token"
+          content="PbTtMU0Zn1ei5At06y6tc7bCl+n1/xz60DYNSSB+OC32/XnR4Wp032pDwD1hW5YL5OwQhtGBNeZ4dKkIThr16w=="/>
+
+</head>
+<body class='en'>
+
+<header class=' header-mutual tw-flex tw-w-full tw-pl-48' id='header-desktop'>
+    <a class='logo' href='/en'>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 35">
+            <path
+                    d="M37.7 16.1c0 1 .1 2 .3 2.8.2.9.5 1.6 1 2.3.5.6 1 1.2 1.8 1.5s1.6.6 2.6.6 1.8-.2 2.7-.5c.8-.3 1.4-.7 1.9-1V9.3c-.5-.2-1-.2-1.6-.3-.6-.1-1.4-.1-2.4-.1-1.9 0-3.4.6-4.6 1.9-1.1 1.2-1.7 3-1.7 5.3zm-3-4.4c.5-1.3 1.1-2.4 2-3.3.9-.9 1.9-1.6 3.1-2.1 1.2-.3 2.6-.6 4.1-.6 1.6 0 3.1.1 4.4.4s2.3.5 3.1.7v27.6l-3.5.6V25c-.4.3-1.1.6-2 .9-.9.3-1.9.5-3 .5-1.4 0-2.7-.3-3.8-.8-1.1-.5-2-1.2-2.8-2.1s-1.3-2-1.7-3.3-.6-2.6-.6-4.1c0-1.6.2-3.1.7-4.4zM73.8 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1 1.1-.5 2.4-.7 3.7-.7 1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2S59 13.8 59 16s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c.9-1.3 1.4-3 1.4-5.3zm7.6-9.3c.8-.2 1.9-.4 3.2-.6s2.9-.3 4.6-.3c1.6 0 2.9.2 3.9.7 1 .4 1.9 1.1 2.5 1.9.7.6 1.1 1.6 1.4 2.7s.4 2.3.4 3.7v11.1h-3.5V15.6c0-1.2-.1-2.3-.2-3.1s-.4-1.6-.8-2.1-.9-.9-1.5-1.2-1.4-.4-2.4-.4h-1.2s-.9.1-1.3.2-.7.1-1 .1c-.3.1-.5.1-.6.1v16.7h-3.5V6.7zm24-.6h7.5v3h-7.5v9.1c0 1 .1 1.8.2 2.5.2.6.4 1.2.7 1.5.3.4.7.6 1.1.8.5.2 1 .2 1.6.2 1.1 0 1.9-.1 2.6-.4.6-.2 1.1-.4 1.3-.5l.7 2.9c-.4.2-1 .4-1.9.7-.9.3-1.9.4-3 .4-1.3 0-2.5-.2-3.3-.5-.9-.3-1.6-.9-2.1-1.5-.5-.7-.9-1.5-1.1-2.5-.2-1-.3-2.2-.3-3.5V.6l3.5-.6v6.1zM130 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1s2.4-.7 3.7-.7c1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2c-1 1.3-1.5 3.1-1.5 5.3s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c1-1.3 1.5-3 1.5-5.3z"
+                    class="fill-logo-1"/>
+            <g>
+                <path d="M3.5 11.8c2.1 2.1 4.9 3.3 7.8 3.5-.2-2.9-1.4-5.7-3.5-7.8C5.7 5.4 3 4.2 0 4c.2 2.9 1.4 5.7 3.5 7.8z"
+                      class="fill-logo-2"/>
+                <path d="M20.5 11.8c-2.1 2.1-4.9 3.3-7.8 3.5.2-2.9 1.4-5.7 3.5-7.8C18.2 5.4 21 4.2 24 4c-.2 2.9-1.4 5.7-3.5 7.8z"
+                      class="fill-logo-2"/>
+                <path d="M20.5 20.1c-2.1-2.1-4.9-3.3-7.8-3.5.2 2.9 1.4 5.7 3.5 7.8 2.1 2.1 4.9 3.3 7.8 3.5-.2-3-1.4-5.8-3.5-7.8z"
+                      class="fill-logo-2"/>
+                <path d="M3.5 20.1c2.1-2.1 4.9-3.3 7.9-3.5-.2 2.9-1.4 5.7-3.5 7.8C5.7 26.5 3 27.7 0 27.9c.2-3 1.4-5.8 3.5-7.8z"
+                      class="fill-logo-2"/>
+            </g>
+        </svg>
+    </a>
+    <ul class='container-link static'>
+        <li class="with-dropdown navigation-item item--0">
+            <a href="#"
+               data-action='toggle-class'
+               data-target-selector='.item--0'
+               data-value='open'
+               class="item-link"
+            >Business
+                <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                </svg>
+                <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                </svg>
+                <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+            </a>
+            <div class='container-dropdown container-dropdown-desktop small-dropdown'>
+                <div class='links-container tw-w-full'>
+                    <ul class='gap-v-8 md:tw-p-24 lg:tw-p-24'>
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" data-track="website_small_business_clicked"
+                               data-location="section-navbar" href="https://qonto.com/en/small-business">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Microbusinesses</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" data-track="website_medium_business_clicked"
+                               data-location="section-navbar" href="https://qonto.com/en/medium-business">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">SMBs and Startups</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" data-track="website_cta_freelancer_clicked"
+                               data-location="section-navbar" href="https://qonto.com/en/freelancers">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Freelancers</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" href="https://qonto.com/en/open-an-account/association">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Associations</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                    </ul>
+                    <div class="
+  bottom-highlight
+  tw-p-16
+  tw-mt-8
+  md:tw-p-24
+  md:tw-mt-0
+  md:tw-flex md:tw-items-center md:tw-justify-center
+  ">
+                        <div class='main-image tw-mr-8'>
+                            <a data-track="website_contact_button_clicked" data-location="nav--img"
+                               href="https://qonto.com/en/contact-form">
+                                <img src="" alt=""
+                                     data-srcset="https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=100 1x, https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=100 2x, https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=100 3x"
+                                     data-src="https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress,format"
+                                     class="lazy">
+                            </a></div>
+                        <div class="md:tw-mr-8
+  caption
+  ">
+                            <p>Any questions?</p>
+                        </div>
+                        <a data-track="website_contact_button_clicked" data-location="nav-Contact-us"
+                           href="https://qonto.com/en/contact-form">
+                            <h4 class="link-nav body-bold btn-tertiary md:tw-ml-4">
+                                Contact us
+                                <i class='icon-arrow-sm-right'></i>
+                            </h4>
+                        </a></div>
+
+
+                </div>
+            </div>
+
+        </li>
+
+
+        <li class="with-dropdown navigation-item item--1">
+            <a href="#"
+               data-action='toggle-class'
+               data-target-selector='.item--1'
+               data-value='open'
+               class="item-link"
+            >Company creation
+                <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                </svg>
+                <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                </svg>
+                <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+            </a>
+            <div class='container-dropdown container-dropdown-desktop small-dropdown'>
+                <div class='links-container tw-w-full'>
+                    <ul class='gap-v-8 md:tw-p-24 lg:tw-p-24'>
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" data-track="website_capital_deposit_clicked"
+                               data-location="section-navbar" href="https://qonto.com/en/capital-deposit">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Share capital deposit</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" data-track="website_cta_companycreation_clicked"
+                               data-location="section-navbar" href="https://qonto.com/en/company-creation">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Company creation</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                        <li class="tw-p-16 tw-flex tw-items-center">
+                            <a class="group-link" href="https://qonto.com/en/pricing?select-toggle=creation">
+                                <div class="pill tw-flex tw-items-center">
+
+                                    <div class="pill-text">
+                                        <span class="body-small tw-mr-8">Plan for business founders</span>
+                                        <br>
+                                    </div>
+                                </div>
+                            </a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </li>
+
+
+        <li class="with-dropdown navigation-item item--2">
+            <a href="#"
+               data-action='toggle-class'
+               data-target-selector='.item--2'
+               data-value='open'
+               class="item-link"
+            >Services
+                <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                </svg>
+                <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                     viewBox="0 0 10 4">
+                    <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                          stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                </svg>
+                <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+            </a>
+            <div class='container-dropdown container-dropdown-desktop big-dropdown'>
+                <div class='main-container md:tw-flex'>
+                    <div class='links-container tw-w-1_2 tw-mr-24'>
+                        <ul>
+                            <li class='tw-flex tw-items-center caps-title body-bold tw-pb-8 tw-pt-0 tw-pl-16'>BUSINESS
+                                ACCOUNT
+                            </li>
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_pro_account_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/open-an-account">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Professional Account</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="https://qonto.com/en/payment-methods/card">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Mastercard Business Cards</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="https://qonto.com/en/payment-methods#section-8">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">SEPA and SWIFT transfers</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_payment_methods_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/payment-methods">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">All payment methods</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8"></span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class='links-container tw-w-1_2 tw-mt-16 md:tw-mt-0'>
+                        <ul>
+                            <li class='tw-flex tw-items-center caps-title body-bold tw-pb-8 tw-pt-0 tw-pl-16'>ADVANCED
+                            </li>
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_accounting_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/accounting">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Automated bookkeeping</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_team_clicked" data-location="section-navbar"
+                                   href="https://qonto.com/en/team">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Team expense management</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_connect_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/connect">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Connections</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_multi_account_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/multi-account">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Multi accounts</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="https://qonto.com/en/financing">
+                                    <div class="pill tw-flex tw-items-center">
+                                        <img src="" alt=""
+                                             data-srcset="https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                             data-src="https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg"
+                                             class="lazy">
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Financing</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class='links-container'>
+                    <div class='tw-w-full'>
+                        <div class="
+  bottom-highlight
+  tw-p-16
+  tw-mt-8
+  md:tw-p-24
+  md:tw-mt-0
+  md:tw-flex md:tw-items-center md:tw-justify-center
+  ">
+    <span class="purple-tag
+      tw-mb-8
+      md:tw-mb-0
+      md:tw-mr-8
+      tw-inline-block">
+      New
+    </span>
+                            <div class="md:tw-mr-8
+  caption
+  ">
+                                <p><strong>Use Qonto with Google Pay™</strong></p>
+                            </div>
+                            <a href="https://qonto.com/en/payment-methods/google-pay">
+                                <h4 class="link-nav body-bold btn-tertiary md:tw-ml-4">
+                                    Discover
+                                    <i class='icon-arrow-sm-right'></i>
+                                </h4>
+                            </a></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+
+        <li class=link>
+            <a class=" " data-track="website_cta_pricing_clicked" data-location="navbar"
+               href="https://qonto.com/en/pricing">Pricing</a>
+        </li>
+
+    </ul>
+    <ul class='container-action tw-list-none tw-flex tw-ml-auto'>
+        <li class=link>
+            <a class=" " data-track="website_signin_clicked" data-location="navbar" href="https://app.qonto.com/">Log
+                in</a>
+        </li>
+
+        <li class=purple-large>
+            <a class="btn-primary-large " data-track="website_cta_signup_clicked" data-location="navbar"
+               href="https://welcome.qonto.com">Open an account</a>
+        </li>
+
+    </ul>
+</header>
+
+
+<div class='header-mutual tw-w-full' id='header-mobile'>
+    <div class='header tw-flex tw-items-center'>
+        <a class='logo' href='/en'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 35">
+                <path
+                        d="M37.7 16.1c0 1 .1 2 .3 2.8.2.9.5 1.6 1 2.3.5.6 1 1.2 1.8 1.5s1.6.6 2.6.6 1.8-.2 2.7-.5c.8-.3 1.4-.7 1.9-1V9.3c-.5-.2-1-.2-1.6-.3-.6-.1-1.4-.1-2.4-.1-1.9 0-3.4.6-4.6 1.9-1.1 1.2-1.7 3-1.7 5.3zm-3-4.4c.5-1.3 1.1-2.4 2-3.3.9-.9 1.9-1.6 3.1-2.1 1.2-.3 2.6-.6 4.1-.6 1.6 0 3.1.1 4.4.4s2.3.5 3.1.7v27.6l-3.5.6V25c-.4.3-1.1.6-2 .9-.9.3-1.9.5-3 .5-1.4 0-2.7-.3-3.8-.8-1.1-.5-2-1.2-2.8-2.1s-1.3-2-1.7-3.3-.6-2.6-.6-4.1c0-1.6.2-3.1.7-4.4zM73.8 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1 1.1-.5 2.4-.7 3.7-.7 1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2S59 13.8 59 16s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c.9-1.3 1.4-3 1.4-5.3zm7.6-9.3c.8-.2 1.9-.4 3.2-.6s2.9-.3 4.6-.3c1.6 0 2.9.2 3.9.7 1 .4 1.9 1.1 2.5 1.9.7.6 1.1 1.6 1.4 2.7s.4 2.3.4 3.7v11.1h-3.5V15.6c0-1.2-.1-2.3-.2-3.1s-.4-1.6-.8-2.1-.9-.9-1.5-1.2-1.4-.4-2.4-.4h-1.2s-.9.1-1.3.2-.7.1-1 .1c-.3.1-.5.1-.6.1v16.7h-3.5V6.7zm24-.6h7.5v3h-7.5v9.1c0 1 .1 1.8.2 2.5.2.6.4 1.2.7 1.5.3.4.7.6 1.1.8.5.2 1 .2 1.6.2 1.1 0 1.9-.1 2.6-.4.6-.2 1.1-.4 1.3-.5l.7 2.9c-.4.2-1 .4-1.9.7-.9.3-1.9.4-3 .4-1.3 0-2.5-.2-3.3-.5-.9-.3-1.6-.9-2.1-1.5-.5-.7-.9-1.5-1.1-2.5-.2-1-.3-2.2-.3-3.5V.6l3.5-.6v6.1zM130 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1s2.4-.7 3.7-.7c1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2c-1 1.3-1.5 3.1-1.5 5.3s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c1-1.3 1.5-3 1.5-5.3z"
+                        class="fill-logo-1"/>
+                <g>
+                    <path d="M3.5 11.8c2.1 2.1 4.9 3.3 7.8 3.5-.2-2.9-1.4-5.7-3.5-7.8C5.7 5.4 3 4.2 0 4c.2 2.9 1.4 5.7 3.5 7.8z"
+                          class="fill-logo-2"/>
+                    <path d="M20.5 11.8c-2.1 2.1-4.9 3.3-7.8 3.5.2-2.9 1.4-5.7 3.5-7.8C18.2 5.4 21 4.2 24 4c-.2 2.9-1.4 5.7-3.5 7.8z"
+                          class="fill-logo-2"/>
+                    <path d="M20.5 20.1c-2.1-2.1-4.9-3.3-7.8-3.5.2 2.9 1.4 5.7 3.5 7.8 2.1 2.1 4.9 3.3 7.8 3.5-.2-3-1.4-5.8-3.5-7.8z"
+                          class="fill-logo-2"/>
+                    <path d="M3.5 20.1c2.1-2.1 4.9-3.3 7.9-3.5-.2 2.9-1.4 5.7-3.5 7.8C5.7 26.5 3 27.7 0 27.9c.2-3 1.4-5.8 3.5-7.8z"
+                          class="fill-logo-2"/>
+                </g>
+            </svg>
+        </a>
+        <ul class='tw-flex tw-items-center'>
+            <li class=purple-large>
+                <a class="btn-primary-large " data-track="website_cta_signup_clicked" data-location="navbar"
+                   href="https://welcome.qonto.com">Open an account</a>
+            </li>
+
+        </ul>
+        <div class='toggle-menu tw-ml-24' id='toggle-menu-mobile'>
+            <div class='line'></div>
+            <div class='line'></div>
+        </div>
+    </div>
+    <div class='content tw-w-full tw-pb-0'>
+        <ul class='container-link tw-w-full tw-p-24'>
+            <li class="with-dropdown navigation-item item--0">
+                <a href="#"
+                   data-action='toggle-class'
+                   data-target-selector='.item--0'
+                   data-value='open'
+                   class="item-link"
+                >Business
+                    <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                    </svg>
+                    <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                    </svg>
+                    <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+                </a>
+                <div class='container-dropdown container-dropdown-desktop small-dropdown'>
+                    <div class='links-container tw-w-full'>
+                        <ul class='gap-v-8 md:tw-p-24 lg:tw-p-24'>
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_small_business_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/small-business">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Microbusinesses</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_medium_business_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/medium-business">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">SMBs and Startups</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_cta_freelancer_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/freelancers">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Freelancers</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="https://qonto.com/en/open-an-account/association">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Associations</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                        </ul>
+                        <div class="
+  bottom-highlight
+  tw-p-16
+  tw-mt-8
+  md:tw-p-24
+  md:tw-mt-0
+  md:tw-flex md:tw-items-center md:tw-justify-center
+  ">
+                            <div class='main-image tw-mr-8'>
+                                <a data-track="website_contact_button_clicked" data-location="nav--img"
+                                   href="https://qonto.com/en/contact-form">
+                                    <img src="" alt=""
+                                         data-srcset="https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=100 1x, https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=100 2x, https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=100 3x"
+                                         data-src="https://images.prismic.io/qonto/afbcbb44-6601-4f4d-bbca-beb304ff6047_asset-nav-sales.png?auto=compress,format"
+                                         class="lazy">
+                                </a></div>
+                            <div class="md:tw-mr-8
+  caption
+  ">
+                                <p>Any questions?</p>
+                            </div>
+                            <a data-track="website_contact_button_clicked" data-location="nav-Contact-us"
+                               href="https://qonto.com/en/contact-form">
+                                <h4 class="link-nav body-bold btn-tertiary md:tw-ml-4">
+                                    Contact us
+                                    <i class='icon-arrow-sm-right'></i>
+                                </h4>
+                            </a></div>
+
+
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="border"></li>
+
+            <li class="with-dropdown navigation-item item--1">
+                <a href="#"
+                   data-action='toggle-class'
+                   data-target-selector='.item--1'
+                   data-value='open'
+                   class="item-link"
+                >Company creation
+                    <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                    </svg>
+                    <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                    </svg>
+                    <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+                </a>
+                <div class='container-dropdown container-dropdown-desktop small-dropdown'>
+                    <div class='links-container tw-w-full'>
+                        <ul class='gap-v-8 md:tw-p-24 lg:tw-p-24'>
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_capital_deposit_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/capital-deposit">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Share capital deposit</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" data-track="website_cta_companycreation_clicked"
+                                   data-location="section-navbar" href="https://qonto.com/en/company-creation">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Company creation</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                            <li class="tw-p-16 tw-flex tw-items-center">
+                                <a class="group-link" href="https://qonto.com/en/pricing?select-toggle=creation">
+                                    <div class="pill tw-flex tw-items-center">
+
+                                        <div class="pill-text">
+                                            <span class="body-small tw-mr-8">Plan for business founders</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="border"></li>
+
+            <li class="with-dropdown navigation-item item--2">
+                <a href="#"
+                   data-action='toggle-class'
+                   data-target-selector='.item--2'
+                   data-value='open'
+                   class="item-link"
+                >Services
+                    <svg class="dropdown-opened" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M9 4L5 0 1 4"/>
+                    </svg>
+                    <svg class="dropdown-closed" xmlns="http://www.w3.org/2000/svg" width="10" height="4"
+                         viewBox="0 0 10 4">
+                        <path fill="none" fill-rule="evenodd" stroke="#6B5AED" stroke-linecap="round"
+                              stroke-linejoin="round" d="M1 0l4 4 4-4"/>
+                    </svg>
+                    <span class="toggle">
+      <i class="icon-chevron-up"></i>
+    </span>
+                </a>
+                <div class='container-dropdown container-dropdown-desktop big-dropdown'>
+                    <div class='main-container md:tw-flex'>
+                        <div class='links-container tw-w-1_2 tw-mr-24'>
+                            <ul>
+                                <li class='tw-flex tw-items-center caps-title body-bold tw-pb-8 tw-pt-0 tw-pl-16'>
+                                    BUSINESS ACCOUNT
+                                </li>
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_pro_account_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/open-an-account">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/b26809a5-8a5c-4ded-b566-21914850a5cc_nav-icon-account.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Professional Account</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" href="https://qonto.com/en/payment-methods/card">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/46fe8032-d3c6-41bf-a77f-38a04d4a3ae9_nav-icon-cards.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Mastercard Business Cards</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" href="https://qonto.com/en/payment-methods#section-8">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/eb8b33e5-a5ef-4944-896e-c3a158d789c2_nav-icon-transfers.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">SEPA and SWIFT transfers</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_payment_methods_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/payment-methods">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/b2dd0e11-c2fb-465d-99ef-563f38822109_nav-icon-payment-method.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">All payment methods</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" href="">
+                                        <div class="pill tw-flex tw-items-center">
+
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8"></span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                            </ul>
+                        </div>
+                        <div class='links-container tw-w-1_2 tw-mt-16 md:tw-mt-0'>
+                            <ul>
+                                <li class='tw-flex tw-items-center caps-title body-bold tw-pb-8 tw-pt-0 tw-pl-16'>
+                                    ADVANCED
+                                </li>
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_accounting_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/accounting">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/90b4bf71-22d7-43ba-8390-0aebdae76fc4_nav-icon-accounting.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Automated bookkeeping</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_team_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/team">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/afcfe280-fea5-4369-b075-725b1ae6b415_nav-icon-spending.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Team expense management</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_connect_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/connect">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/a469bed7-d65b-4c8f-a29a-fd1b926b8e14_nav-icon-connect.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Connections</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" data-track="website_multi_account_clicked"
+                                       data-location="section-navbar" href="https://qonto.com/en/multi-account">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/606e5e7c-698c-4efb-b10d-23055999e9f7_nav-icon-multiaccount-or-teamexpense.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Multi accounts</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                                <li class="tw-p-16 tw-flex tw-items-center">
+                                    <a class="group-link" href="https://qonto.com/en/financing">
+                                        <div class="pill tw-flex tw-items-center">
+                                            <img src="" alt=""
+                                                 data-srcset="https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=1&amp;q=55&amp;usm=20&amp;w=48 1x, https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=2&amp;q=25&amp;usm=20&amp;w=48 2x, https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg?dpr=3&amp;q=15&amp;usm=20&amp;w=48 3x"
+                                                 data-src="https://qonto.cdn.prismic.io/qonto/52cbb7b4-9f2f-4b8c-b2b0-ec978da0d202_nav-icon-credit.svg"
+                                                 class="lazy">
+                                            <div class="pill-text">
+                                                <span class="body-small tw-mr-8">Financing</span>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class='links-container'>
+                        <div class='tw-w-full'>
+                            <div class="
+  bottom-highlight
+  tw-p-16
+  tw-mt-8
+  md:tw-p-24
+  md:tw-mt-0
+  md:tw-flex md:tw-items-center md:tw-justify-center
+  ">
+    <span class="purple-tag
+      tw-mb-8
+      md:tw-mb-0
+      md:tw-mr-8
+      tw-inline-block">
+      New
+    </span>
+                                <div class="md:tw-mr-8
+  caption
+  ">
+                                    <p><strong>Use Qonto with Google Pay™</strong></p>
+                                </div>
+                                <a href="https://qonto.com/en/payment-methods/google-pay">
+                                    <h4 class="link-nav body-bold btn-tertiary md:tw-ml-4">
+                                        Discover
+                                        <i class='icon-arrow-sm-right'></i>
+                                    </h4>
+                                </a></div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="border"></li>
+
+            <li class=link>
+                <a class=" " data-track="website_cta_pricing_clicked" data-location="navbar"
+                   href="https://qonto.com/en/pricing">Pricing</a>
+            </li>
+
+            <li class=grey-large>
+                <a class="btn-secondary " data-track="website_signin_clicked" data-location="navbar"
+                   href="https://app.qonto.com/">Log in</a>
+            </li>
+
+        </ul>
+    </div>
+    <div class='background-overlay'></div>
+</div>
+
+
+<div class='base-page'>
+    <div class='page-bg-container page-bg-container-gradient'>
+        <section
+                class="hero-section mt-image image transparent-mode section--spc--nav--top section--spc--none--bottom prismic"
+                id="section-0">
+            <div class='h-container'>
+                <div class="lg:row-12 lg:row-gap md:row-8 md:row-gap x-md:row-8 x-md:row-gap sm:row-4 sm:row-gap x-md:row-center">
+                    <div class='lg:col lg:col-span-6 md:col md:col-span-4 sm:col-span-4 x-md:col-span-8 flex-content-center flex-direction-column show-flex'>
+                        <h1>
+                            The deposit of your share capital 100% online
+                        </h1>
+                        <div class="x-md:row-8">
+                            <div class='body-regular subtitle x-md:col-offset-1 x-md:col-span-6'>
+
+                                <div class='checkmark'>
+                                    <ul>
+                                        <li class='tw-mb-8'>
+                                            <span class="icon tw-mr-8 inline-block"><i
+                                                    class="icon-checkmark"></i></span>
+                                            <p>A simple transfer to your account</p>
+                                        </li>
+                                        <li class='tw-mb-8'>
+                                            <span class="icon tw-mr-8 inline-block"><i
+                                                    class="icon-checkmark"></i></span>
+                                            <p>Digital deposit certificate within 72h</p>
+                                        </li>
+                                        <li class=''>
+                                            <span class="icon tw-mr-8 inline-block"><i
+                                                    class="icon-checkmark"></i></span>
+                                            <p>Current business account with no hidden fees</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mt-16 btns-container ">
+                            <a class="btn-primary btn mt-16" data-track="website_cta_signup_clicked"
+                               data-location="hero_primary_btn" href="https://welcome.qonto.com">Deposit your share
+                                capital</a>
+
+                        </div>
+                    </div>
+                    <div class='lg:col sm:col-span-4 lg:col-span-6 md:col md:col-span-4 x-md:col-span-8 flex-content-center flex-direction-column show-flex'>
+                        <div class="placeholder-absolute-img">
+                            <div class="container-img hide-for-mobile">
+                                <picture>
+                                    <source data-breakpoint="sm"
+                                            srcset="https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=425 1x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=425 2x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=425 3x"
+                                            media="(max-width: 767px)">
+                                    <source data-breakpoint="md"
+                                            srcset="https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=480 1x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=480 2x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=480 3x"
+                                            media="(max-width: 1023px)">
+                                    <source data-breakpoint="lg"
+                                            srcset="https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=690 1x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=690 2x, https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=690 3x">
+                                    <img src="https://images.prismic.io/qonto/743ada17-e5a6-47b2-a1e3-cef7582f7a40_Hero-CapitalDeposit-EN.png?auto=compress,format"
+                                         class="responsive_img"></picture>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section
+                class="stepper_advanced_v2-section transparent-mode section--spc--hero-sibling--top section--spc--background-sibling--bottom prismic"
+                id="section-1">
+            <div class='h-container'>
+                <div class="lg:row-12 lg:row-gap md:row-8 md:row-gap lg:row-center md:row-center">
+                    <div class="lg:col lg:col-span-5 md:col md:col-span-4">
+                        <div class='description gap-v-24 lg:gap-v-32'>
+                            <h2>3 quick steps to deposit your share capital online</h2>
+                            <div class="body-regular"><p>Open a Qonto account, proceed with the deposit of your share
+                                capital and receive a digital certificate within 72h on average.</p></div>
+                            <a class="btn-primary cta-desktop" data-track="website_cta_signup_clicked"
+                               data-location="stepper_advanced_v2-section" href="https://welcome.qonto.com">Deposit your
+                                share capital</a>
+                        </div>
+                    </div>
+                    <div class="step-section lg:col lg:col-offset-1 lg:col-span-6 md:col md:col-span-4">
+                        <div class='sm:gap-v-32'>
+                            <div class='step-container'>
+                                <div class="step-dots">
+                                    <div class="step-dot active step-dot-0"></div>
+                                    <div class="step-dot active step-dot-1"></div>
+                                    <div class="step-dot active step-dot-2"></div>
+                                    <div class="step-dot active step-dot-3"></div>
+                                    <div class="step-dot active step-dot-4"></div>
+                                    <div class="step-dot active step-dot-5"></div>
+                                </div>
+                                <div class="step-num">01</div>
+                                <div>
+                                    <h3>Open an account in 10 minutes</h3>
+                                    <div class="body-small step-description"><p>Enter your personal, shareholder, and
+                                        company information as listed in your by-laws. Next, <strong>add these by-laws
+                                            on Qonto.</strong></p></div>
+                                </div>
+                            </div>
+                            <div class='step-container'>
+                                <div class="step-dots">
+                                    <div class="step-dot active step-dot-0"></div>
+                                    <div class="step-dot active step-dot-1"></div>
+                                    <div class="step-dot active step-dot-2"></div>
+                                    <div class="step-dot active step-dot-3"></div>
+                                    <div class="step-dot active step-dot-4"></div>
+                                    <div class="step-dot active step-dot-5"></div>
+                                </div>
+                                <div class="step-num">02</div>
+                                <div>
+                                    <h3>Deposit your share capital</h3>
+                                    <div class="body-small step-description"><p>Each partner should make their share
+                                        capital deposit with one <strong>simple transfer</strong>. You'll then receive a
+                                        fund deposit certificate via email within 72 hours.</p></div>
+                                </div>
+                            </div>
+                            <div class='step-container'>
+                                <div class="step-num">03</div>
+                                <div>
+                                    <h3>Register your company</h3>
+                                    <div class="body-small step-description"><p>Finalize your company's registration
+                                        with the relevant official entities, then submit your registration documents to
+                                        Qonto so the <strong>funds can be released</strong>. You're all set!</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="btn-primary cta-mobile" data-track="website_cta_signup_clicked"
+                       data-location="stepper_advanced_v2-section" href="https://welcome.qonto.com">Deposit your share
+                        capital</a>
+                </div>
+            </div>
+        </section>
+        <section
+                class="container-section transparent-mode section--spc--background-sibling--top section--spc--standard--bottom prismic"
+                id="section-2">
+            <div class='h-container gap-v-64'>
+                <a class="clickable-container" href="https://qonto.com/en/pricing?select-toggle=creation">
+                    <div class='container'>
+                        <div class='md:row-8 md:row-gap lg:row-12 lg:row-gap'>
+                            <div class='text-container gap-v-32 tw-flex tw-flex-col tw-text-center md:tw-text-left md:col md:col-span-4 lg:col lg:col-span-6'>
+                                <h2>How much does it cost to make a share capital deposit?</h2>
+                                <div class='body-regular'>
+                                    <div class='gap-v-16 bullets'>
+                                        <div class='bullet tw-flex tw-flex-row'>
+                                            <i class='icon-checkmark'></i>
+                                            <p><strong>Packs from €139 during the first year</strong>: 12 month
+                                                subscription (Basic plan), including a share capital deposit €69</p>
+                                        </div>
+                                        <div class='bullet tw-flex tw-flex-row'>
+                                            <i class='icon-checkmark'></i>
+                                            <p><strong>Or without commitment </strong>from €9 / month + share capital
+                                                deposit €69</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='btns-container sm:gap-v-16'>
+  <span class="btn btn-tertiary">
+    Compare plans
+    <i class='icon-arrow-sm-right'></i>
+  </span>
+
+                                </div>
+                            </div>
+                            <div class='img-container tw-flex lg:col lg:col-span-6 md:col md:col-span-4'>
+                                <picture>
+                                    <source data-breakpoint="sm"
+                                            data-srcset="https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=335 1x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=335 2x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=335 3x"
+                                            media="(max-width: 767px)">
+                                    <source data-breakpoint="md"
+                                            data-srcset="https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=480 1x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=480 2x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=480 3x"
+                                            media="(max-width: 1023px)">
+                                    <source data-breakpoint="lg"
+                                            data-srcset="https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=588 1x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=588 2x, https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=588 3x">
+                                    <img data-src="https://images.prismic.io/qonto/96902247-0fce-4055-9406-1b7298f681b9_Pricing-Container-EN.png?auto=compress,format"
+                                         class="responsive_img lazy"></picture>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </a></div>
+
+        </section>
+    </div>
+    <div class='page-bg-container page-bg-container-not-defined'>
+        <section
+                class="testimonials-carousel-section tw-pt-64 md:tw-pt-80 tw-pb-64 md:tw-pb-80 grey-mode section--spc--standard--top section--spc--standard--bottom prismic"
+                data-number-of-testimonials="2" id="section-3">
+            <div class='gap-v-32 lg:gap-v-64'>
+                <div class='h-container'>
+                    <div class="lg:row-12 lg:row-gap lg:row-center md:row-8 md:row-gap md:row-center">
+                        <div class='lg:col lg:col-span-8 md:col md:col-span-6'>
+
+                            <div class='text-center title'>
+                                <h2>We have seen them bloom and grow</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-container testimonials swiper-add-space">
+                    <div class="swiper-wrapper">
+                        <div class='swiper-slide'>
+                            <div class='h-container'>
+                                <div class="lg:row-12 lg:row-gap lg:row-center md:row-8 md:row-gap md:row-center">
+                                    <div class='lg:col lg:col-span-8 md:col md:col-span-6'>
+
+                                        <div class='testimonial'>
+                                            <div class='testimonial--image'>
+                                                <img src="https://images.prismic.io/qonto/d1d40c44-0cf7-480d-8893-270263d82277_testimonials_bastienpetit_FR.png?auto=compress,format"
+                                                     alt=""
+                                                     srcset="https://images.prismic.io/qonto/d1d40c44-0cf7-480d-8893-270263d82277_testimonials_bastienpetit_FR.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=140 1x, https://images.prismic.io/qonto/d1d40c44-0cf7-480d-8893-270263d82277_testimonials_bastienpetit_FR.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=140 2x, https://images.prismic.io/qonto/d1d40c44-0cf7-480d-8893-270263d82277_testimonials_bastienpetit_FR.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=140 3x"/>
+                                            </div>
+                                            <div class='testimonial--textual-items'>
+                                                <div class="h3 testimonial--quote"><p>"Excellent service! We could
+                                                    deposit the share capital online, and the customer service was
+                                                    really helpful."</p></div>
+                                                <div class="body-bold testimonial--name"><p>Bastien Petit, Founder of
+                                                    Cashnotify</p></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='swiper-slide'>
+                            <div class='h-container'>
+                                <div class="lg:row-12 lg:row-gap lg:row-center md:row-8 md:row-gap md:row-center">
+                                    <div class='lg:col lg:col-span-8 md:col md:col-span-6'>
+
+                                        <div class='testimonial'>
+                                            <div class='testimonial--image'>
+                                                <img src="https://images.prismic.io/qonto/9faea416-f801-4d86-a016-5e5c7f1723d4_testimonials_alixbastide_FR.png?auto=compress,format"
+                                                     alt=""
+                                                     srcset="https://images.prismic.io/qonto/9faea416-f801-4d86-a016-5e5c7f1723d4_testimonials_alixbastide_FR.png?auto=compress%2Cformat&amp;dpr=1&amp;q=55&amp;usm=20&amp;w=140 1x, https://images.prismic.io/qonto/9faea416-f801-4d86-a016-5e5c7f1723d4_testimonials_alixbastide_FR.png?auto=compress%2Cformat&amp;dpr=2&amp;q=25&amp;usm=20&amp;w=140 2x, https://images.prismic.io/qonto/9faea416-f801-4d86-a016-5e5c7f1723d4_testimonials_alixbastide_FR.png?auto=compress%2Cformat&amp;dpr=3&amp;q=15&amp;usm=20&amp;w=140 3x"/>
+                                            </div>
+                                            <div class='testimonial--textual-items'>
+                                                <div class="h3 testimonial--quote"><p>"Depositing my share capital
+                                                    deposit online was so easy! I really enjoy using the app with its
+                                                    intuitive and simple interface."</p></div>
+                                                <div class="body-bold testimonial--name"><p>Alix de Bastide, Founder of
+                                                    Le French Biscuit</p></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="btn btn--nav btn--nav--prev btn--nav--img-aligned" href="#">
+                        <i class='icon-arrow-left-circle'></i>
+                    </a> <a class="btn btn--nav btn--nav--next btn--nav--img-aligned" href="#">
+                    <i class='icon-arrow-right-circle'></i>
+                </a>
+                    <div class='swiper-pagination swiper-pagination--qonto'></div>
+                </div>
+
+            </div>
+        </section>
+        <section
+                class="actions-section text-center transparent-mode section--spc--standard--top section--spc--standard--bottom prismic"
+                id="section-4">
+            <div class="h-container lg:gap-v-32 md:gap-v-32 sm:gap-v-24">
+
+                <div class="lg:row-12 lg:row-gap md:row-8 md:row-gap lg:row-center md:row-center">
+                    <div class="title lg:col lg:col-span-10 md:col md:col-span-6">
+                        <h2>Ready to try Qonto ?</h2>
+                    </div>
+                </div>
+
+                <div class="lg:row-12 lg:row-gap md:row-8 md:row-gap lg:row-center md:row-center">
+                    <div class="body-regular lg:col lg:col-span-8 md:col md:col-span-6">
+                        <p>Ready to deposit your share capital ? <br>Open a professional account with Qonto!</p>
+                    </div>
+                </div>
+
+                <div class="btns-container btns-container--center btns-container--fixed-size">
+                    <a class="btn btn-primary-large" data-track="website_cta_signup_clicked" data-location="section-4"
+                       href="https://welcome.qonto.com">
+                        <span class="text">Deposit your share capital</span>
+                    </a> <a class="btn btn-secondary" data-track="website_contact_button_clicked"
+                            data-location="section-4" href="https://qonto.com/en/contact-form">
+                    <span class="text">Talk with the sales team</span>
+                </a></div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var colorPalette = JSON.parse("{\"tl\":{\"colors\":[255.0,255.0,255.0],\"x\":0,\"y\":0},\"tr\":{\"colors\":[247.0,246.0,254.0],\"x\":35,\"y\":0},\"bl\":{\"colors\":[217,212,248],\"x\":0,\"y\":35},\"br\":{\"colors\":[223,233,251],\"x\":35,\"y\":35},\"positionable\":{\"colors\":[180,240,242],\"x\":43,\"y\":50}}");
+        if (typeof Gradient === 'undefined') {
+            return
+        }
+        var gradientObject = new Gradient(colorPalette);
+        gradientObject.drawGradient('.page-bg-container-gradient');
+    });
+</script>
+
+<div data-customisations='[]' id='pageCustomisation'>
+</div>
+
+
+<footer class='footer-revamp tw-pt-32 tw-pb-16 '>
+    <a class='footer-go-top-buttton'
+       href='#'
+       onclick='document.scrollTo(top: 0, behavior: ‘smooth’);'>
+        <span class='icon-chevron-up'></span>
+    </a>
+
+    <div class='h-container gap-v-32 tw-pt-32 tw-pb-16'>
+        <div class='footer-top-nav'>
+            <div class='footer-breadcrumbs'>
+                <section class='breadcrumbs--universal'>
+                    <div class='breadcrumbs--wrapper'>
+                        <div class='breadcrumbs--container'>
+                            <ol class='breadcrumbs--content'>
+                                <li><a href="https://qonto.com/en">Home</a></li>
+                                <i class="icon-arrow-sm-right"></i>
+                                <li>The deposit of your share capital 100% online</li>
+                                </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+            <div class='footer-lang-switch'>
+                <div class='footer-lang-switch-container'>
+                    <div class="footer-lang-switch-button body-small">
+                        <img class='lazy footer-lang-switch-flag' data-src="https://qonto.com/homepage/flags/en.svg"
+                             alt="English">
+                        <span>en</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0978 6.6136L8.77624 10.0286C8.63577 10.169 8.44534 10.2479 8.2468 10.2479C8.04826 10.2479 7.85783 10.169 7.71735 10.0286L4.39833 6.6136C4.35075 6.56703 4.31295 6.51142 4.28715 6.45003C4.26134 6.38864 4.24805 6.3227 4.24805 6.2561C4.24805 6.18949 4.26134 6.12356 4.28715 6.06216C4.31295 6.00077 4.35075 5.94516 4.39833 5.8986C4.49191 5.80547 4.6185 5.7532 4.75046 5.7532L11.7444 5.75195C11.81 5.75195 11.875 5.7649 11.9357 5.79007C11.9963 5.81523 12.0514 5.85211 12.0978 5.8986C12.1453 5.94516 12.1831 6.00077 12.2089 6.06216C12.2348 6.12356 12.248 6.18949 12.248 6.2561C12.248 6.3227 12.2348 6.38864 12.2089 6.45003C12.1831 6.51142 12.1453 6.56703 12.0978 6.6136Z"
+                                  fill="#262A3E"/>
+                        </svg>
+
+                    </div>
+                    <div class="footer-lang-switch-dropdown">
+                        <div class="dropdown-link-lang">
+                            <a class="footer-lang-switch-link" href="/fr">
+                                <img class='lazy footer-lang-switch-flag'
+                                     data-src="https://qonto.com/homepage/flags/fr.svg" alt="Français">
+                                Français
+                            </a></div>
+                        <div class="dropdown-link-lang">
+                            <a class="footer-lang-switch-link" href="/en">
+                                <img class='lazy footer-lang-switch-flag'
+                                     data-src="https://qonto.com/homepage/flags/en.svg" alt="English">
+                                English
+                            </a></div>
+                        <div class="dropdown-link-lang">
+                            <a class="footer-lang-switch-link" href="/es">
+                                <img class='lazy footer-lang-switch-flag'
+                                     data-src="https://qonto.com/homepage/flags/es.svg" alt="Español">
+                                Español
+                            </a></div>
+                        <div class="dropdown-link-lang">
+                            <a class="footer-lang-switch-link" href="/de">
+                                <img class='lazy footer-lang-switch-flag'
+                                     data-src="https://qonto.com/homepage/flags/de.svg" alt="Deutsch">
+                                Deutsch
+                            </a></div>
+                        <div class="dropdown-link-lang">
+                            <a class="footer-lang-switch-link" href="/it">
+                                <img class='lazy footer-lang-switch-flag'
+                                     data-src="https://qonto.com/homepage/flags/it.svg" alt="Italiano">
+                                Italiano
+                            </a></div>
+                    </div>
+                </div>
+                <script>
+                    var langLinks = document.querySelectorAll('.footer-lang-switch-button'),
+                        langDropdowns = document.querySelectorAll('.footer-lang-switch-dropdown');
+
+                    for (const [index, langLink] of langLinks.entries()) {
+                        langLink.addEventListener('click', function () {
+                            this.focus();
+                            langDropdowns[index].classList.toggle('open');
+                            langDropdowns[index].focus();
+                        })
+
+                        document.addEventListener('click', function (event) {
+                            if (event.target.closest('.footer-lang-switch-button')) return;
+                            langDropdowns[index].classList.remove('open');
+                        })
+                    }
+                </script>
+            </div>
+
+            <div class='footer-logo'>
+                <svg width="130" height="35" viewBox="0 0 130 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill='#414660'
+                          d="M37.7 16.1c0 1 .1 2 .3 2.8.2.9.5 1.6 1 2.3.5.6 1 1.2 1.8 1.5s1.6.6 2.6.6 1.8-.2 2.7-.5c.8-.3 1.4-.7 1.9-1V9.3c-.5-.2-1-.2-1.6-.3-.6-.1-1.4-.1-2.4-.1-1.9 0-3.4.6-4.6 1.9-1.1 1.2-1.7 3-1.7 5.3zm-3-4.4c.5-1.3 1.1-2.4 2-3.3.9-.9 1.9-1.6 3.1-2.1 1.2-.3 2.6-.6 4.1-.6 1.6 0 3.1.1 4.4.4s2.3.5 3.1.7v27.6l-3.5.6V25c-.4.3-1.1.6-2 .9-.9.3-1.9.5-3 .5-1.4 0-2.7-.3-3.8-.8-1.1-.5-2-1.2-2.8-2.1s-1.3-2-1.7-3.3-.6-2.6-.6-4.1c0-1.6.2-3.1.7-4.4zM73.8 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1 1.1-.5 2.4-.7 3.7-.7 1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2S59 13.8 59 16s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c.9-1.3 1.4-3 1.4-5.3zm7.6-9.3c.8-.2 1.9-.4 3.2-.6s2.9-.3 4.6-.3c1.6 0 2.9.2 3.9.7 1 .4 1.9 1.1 2.5 1.9.7.6 1.1 1.6 1.4 2.7s.4 2.3.4 3.7v11.1h-3.5V15.6c0-1.2-.1-2.3-.2-3.1s-.4-1.6-.8-2.1-.9-.9-1.5-1.2-1.4-.4-2.4-.4h-1.2s-.9.1-1.3.2-.7.1-1 .1c-.3.1-.5.1-.6.1v16.7h-3.5V6.7zm24-.6h7.5v3h-7.5v9.1c0 1 .1 1.8.2 2.5.2.6.4 1.2.7 1.5.3.4.7.6 1.1.8.5.2 1 .2 1.6.2 1.1 0 1.9-.1 2.6-.4.6-.2 1.1-.4 1.3-.5l.7 2.9c-.4.2-1 .4-1.9.7-.9.3-1.9.4-3 .4-1.3 0-2.5-.2-3.3-.5-.9-.3-1.6-.9-2.1-1.5-.5-.7-.9-1.5-1.1-2.5-.2-1-.3-2.2-.3-3.5V.6l3.5-.6v6.1zM130 16c0 1.6-.2 3-.7 4.3-.5 1.3-1.1 2.4-1.9 3.3s-1.8 1.6-2.9 2.1c-1.1.5-2.4.7-3.7.7-1.3 0-2.6-.2-3.7-.7-1.1-.5-2.1-1.2-2.9-2.1-.8-.9-1.5-2-1.9-3.3-.5-1.3-.7-2.7-.7-4.3 0-1.5.2-3 .7-4.2.5-1.3 1.1-2.4 1.9-3.3.8-.9 1.8-1.6 2.9-2.1s2.4-.7 3.7-.7c1.3 0 2.6.2 3.7.7 1.1.5 2.1 1.2 2.9 2.1.8.9 1.5 2 1.9 3.3.5 1.3.7 2.7.7 4.2zm-3.7 0c0-2.2-.5-4-1.5-5.3s-2.4-2-4.1-2-3.1.7-4.1 2c-1 1.3-1.5 3.1-1.5 5.3s.5 4 1.5 5.3c1 1.3 2.4 2 4.1 2s3.1-.7 4.1-2c1-1.3 1.5-3 1.5-5.3z"/>
+                    <g fill="#6B5AED">
+                        <path d="M3.5 11.8c2.1 2.1 4.9 3.3 7.8 3.5-.2-2.9-1.4-5.7-3.5-7.8C5.7 5.4 3 4.2 0 4c.2 2.9 1.4 5.7 3.5 7.8z"
+                              class="fill-fotologo-2"/>
+                        <path d="M20.5 11.8c-2.1 2.1-4.9 3.3-7.8 3.5.2-2.9 1.4-5.7 3.5-7.8C18.2 5.4 21 4.2 24 4c-.2 2.9-1.4 5.7-3.5 7.8z"
+                              class="fill-fotologo-2"/>
+                        <path d="M20.5 20.1c-2.1-2.1-4.9-3.3-7.8-3.5.2 2.9 1.4 5.7 3.5 7.8 2.1 2.1 4.9 3.3 7.8 3.5-.2-3-1.4-5.8-3.5-7.8z"
+                              class="fill-fotologo-2"/>
+                        <path d="M3.5 20.1c2.1-2.1 4.9-3.3 7.9-3.5-.2 2.9-1.4 5.7-3.5 7.8C5.7 26.5 3 27.7 0 27.9c.2-3 1.4-5.8 3.5-7.8z"
+                              class="fill-fotologo-2"/>
+                    </g>
+                </svg>
+            </div>
+
+        </div>
+        <div class='footer-main-contents lg:row-12 md:row-8 lg:row-gap md:row-gap gap-v-32 md:gap-v-0 lg:gap-v-0'>
+            <side class='footer-trust-infos lg:col lg:col-span-4 md:col md:col-span-2'>
+                <div class='footer-trust-infos-wraper gap-v-32'>
+                    <div class='footer-client-service body-small'>
+                        <p><strong>Customer service<br></strong>7/7 support by chat, phone or email</p>
+                    </div>
+                    <div class='footer-trust-pilot-md-sup tw-hidden md:tw-block'>
+                        <div class="trustpilot-widget" data-locale="en" data-template-id="53aa8807dec7e10d38f59f32"
+                             data-businessunit-id="5f3be582ed012100015ffda0" data-style-height="105px"
+                             data-style-width="100%" data-theme="light">
+                            <a href="https://trustpilot.com/review/qonto.com" target="_blank"
+                               rel="noopener">Trustpilot</a>
+                        </div>
+
+                    </div>
+                </div>
+            </side>
+            <div class='footer-main-links gap-v-24 body-small lg:col lg:col-span-8 md:col md:col-span-6'>
+                <div class="footer-main-links-cols footer-main-links-cols-open">
+                    <div class='footer-main-links-title mb-16'>
+                        <b>The Qonto offer</b>
+                        <span class='footer-main-links-icon icon-arrow-down'>
+                    </div>
+                    <div class='footer-main-links-entries gap-v-16'>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_cta_pricing_clicked" data-location="links-group-0-item-0"
+                               href="https://qonto.com/en/pricing">Pricing</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/payment-methods/card">Mastercard Business Cards</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_payment_methods_clicked" data-location="links-group-0-item-2"
+                               href="https://qonto.com/en/payment-methods">Payment methods</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_team_clicked" data-location="links-group-0-item-3"
+                               href="https://qonto.com/en/team">Team</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_accounting_clicked" data-location="links-group-0-item-4"
+                               href="https://qonto.com/en/accounting">Accounting</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_multi_account_clicked" data-location="links-group-0-item-5"
+                               href="https://qonto.com/en/multi-account">Multi Account</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_capital_deposit_clicked" data-location="links-group-0-item-6"
+                               href="https://qonto.com/en/capital-deposit">Share capital deposit</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_connect_clicked" data-location="links-group-0-item-7"
+                               href="https://qonto.com/en/connect">Connections</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/payment-methods/apple-pay">Apple Pay</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/payment-methods/google-pay">Google Pay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-main-links-cols ">
+                    <div class='footer-main-links-title mb-16'>
+                        <b>Tools</b>
+                        <span class='footer-main-links-icon icon-arrow-down'>
+                    </div>
+                    <div class='footer-main-links-entries gap-v-16'>
+                        <div class='footer-main-links-entry'>
+                            <a target="_blank" rel="noopener" href="https://help.qonto.com/en">Customer support</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/comparators">Banking comparators</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/open-an-account/account-switch">Transfer account</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a data-track="website_cta_companycreation_clicked" data-location="links-group-1-item-3"
+                               href="https://qonto.com/en/company-creation">Company creation</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a target="_blank" rel="noopener" href="https://updates.qonto.com/">Changelog</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a target="_blank" rel="noopener" href="https://api-doc.qonto.com/">API</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-main-links-cols ">
+                    <div class='footer-main-links-title mb-16'>
+                        <b>About</b>
+                        <span class='footer-main-links-icon icon-arrow-down'>
+                    </div>
+                    <div class='footer-main-links-entries gap-v-16'>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/about">Our story</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/trust">Our customers</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/careers">Careers</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/blog">Blog</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/press">Newsroom</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a target="_blank" rel="noopener" href="https://qonto.typeform.com/to/H8qHhI">Become a
+                                partner</a>
+                        </div>
+                        <div class='footer-main-links-entry'>
+                            <a href="https://qonto.com/en/affiliate">Affiliate program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class='footer-follow-ups'>
+            <script>
+                //<![CDATA[
+
+                var hostUrl = 'https://qonto.com/ ';
+
+                //]]>
+            </script>
+            <form id="customerio-form" class="form footer-newsletter-form body-small" method="post">
+                <label for="email" class='footer-newsletter-title mb-16'>
+                    <b>Follow our latest news</b>
+                </label>
+                <div class="input-container footer-newsletter-input-container">
+                    <input id="email" type="email" name="email" value="" placeholder="Your email"
+                           data-msg="Invalid email address :-(" class="footer-newsletter-input false">
+                    <button disabled="disabled"
+                            class="btn footer-newsletter-btn tw-p-0 customerio-form-btn--light-variant" type="submit"
+                            name="button" data-location="footer">
+                        <i class="icon-arrow-right customerio-form-btn"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class='footer-badges'>
+                <div class="footer-social-networks footer-badges-collection">
+                    <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                       href="https://www.facebook.com/getqonto/">
+                        <img src="" alt=""
+                             data-srcset="https://images.prismic.io/qonto/bef5c62b-49d8-4959-8564-a8cc43e0dddd_Facebook.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/bef5c62b-49d8-4959-8564-a8cc43e0dddd_Facebook.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/bef5c62b-49d8-4959-8564-a8cc43e0dddd_Facebook.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                             data-src="https://images.prismic.io/qonto/bef5c62b-49d8-4959-8564-a8cc43e0dddd_Facebook.png?auto=compress,format"
+                             class="lazy">
+                    </a> <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                            href="https://twitter.com/getqonto">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/f8302e24-95d8-4dc4-bf72-33dd5b7c390c_Twitter.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/f8302e24-95d8-4dc4-bf72-33dd5b7c390c_Twitter.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/f8302e24-95d8-4dc4-bf72-33dd5b7c390c_Twitter.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/f8302e24-95d8-4dc4-bf72-33dd5b7c390c_Twitter.png?auto=compress,format"
+                         class="lazy">
+                </a> <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                        href="https://www.linkedin.com/company/qonto">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/1e947073-ca7e-4396-a608-b9101fe736f7_LinkedIn.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/1e947073-ca7e-4396-a608-b9101fe736f7_LinkedIn.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/1e947073-ca7e-4396-a608-b9101fe736f7_LinkedIn.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/1e947073-ca7e-4396-a608-b9101fe736f7_LinkedIn.png?auto=compress,format"
+                         class="lazy">
+                </a> <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                        href="https://www.instagram.com/getqonto/">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/d1cbfde3-b878-4317-88b9-b2ff66fcaa9f_Instagram.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/d1cbfde3-b878-4317-88b9-b2ff66fcaa9f_Instagram.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/d1cbfde3-b878-4317-88b9-b2ff66fcaa9f_Instagram.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/d1cbfde3-b878-4317-88b9-b2ff66fcaa9f_Instagram.png?auto=compress,format"
+                         class="lazy">
+                </a> <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                        href="https://dribbble.com/qonto">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/a38b66a8-f30e-4f9a-9100-d83fff8e4d2f_Dribbble.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/a38b66a8-f30e-4f9a-9100-d83fff8e4d2f_Dribbble.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/a38b66a8-f30e-4f9a-9100-d83fff8e4d2f_Dribbble.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/a38b66a8-f30e-4f9a-9100-d83fff8e4d2f_Dribbble.png?auto=compress,format"
+                         class="lazy">
+                </a> <a class="footer-social_networks-link" target="_blank" rel="noopener"
+                        href="https://medium.com/qonto-engineering">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/0bc052cb-fe0d-45f1-9b42-45a1859c768e_Medium.png?auto=compress%2Cformat&amp;dpr=1&amp;h=20&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/0bc052cb-fe0d-45f1-9b42-45a1859c768e_Medium.png?auto=compress%2Cformat&amp;dpr=2&amp;h=20&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/0bc052cb-fe0d-45f1-9b42-45a1859c768e_Medium.png?auto=compress%2Cformat&amp;dpr=3&amp;h=20&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/0bc052cb-fe0d-45f1-9b42-45a1859c768e_Medium.png?auto=compress,format"
+                         class="lazy">
+                </a></div>
+                <div class="footer-stores footer-badges-collection">
+                    <a class="footer-stores-link" target="_blank" rel="noopener"
+                       href="https://apps.apple.com/fr/app/qonto-easy-business-banking/id1214811644?l=en">
+                        <img src="" alt=""
+                             data-srcset="https://images.prismic.io/qonto/dbac8f72-45a9-433f-a95a-cf5bd0b0565e_App+store+button.png?auto=compress%2Cformat&amp;dpr=1&amp;h=40&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/dbac8f72-45a9-433f-a95a-cf5bd0b0565e_App+store+button.png?auto=compress%2Cformat&amp;dpr=2&amp;h=40&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/dbac8f72-45a9-433f-a95a-cf5bd0b0565e_App+store+button.png?auto=compress%2Cformat&amp;dpr=3&amp;h=40&amp;q=15&amp;usm=20 3x"
+                             data-src="https://images.prismic.io/qonto/dbac8f72-45a9-433f-a95a-cf5bd0b0565e_App+store+button.png?auto=compress,format"
+                             class="lazy">
+                    </a> <a class="footer-stores-link" target="_blank" rel="noopener"
+                            href="https://play.google.com/store/apps/details?id=eu.qonto.qonto&amp;hl=en">
+                    <img src="" alt=""
+                         data-srcset="https://images.prismic.io/qonto/55a88ce9-bece-4142-af53-21ef92790152_googleplay+button.png?auto=compress%2Cformat&amp;dpr=1&amp;h=40&amp;q=55&amp;usm=20 1x, https://images.prismic.io/qonto/55a88ce9-bece-4142-af53-21ef92790152_googleplay+button.png?auto=compress%2Cformat&amp;dpr=2&amp;h=40&amp;q=25&amp;usm=20 2x, https://images.prismic.io/qonto/55a88ce9-bece-4142-af53-21ef92790152_googleplay+button.png?auto=compress%2Cformat&amp;dpr=3&amp;h=40&amp;q=15&amp;usm=20 3x"
+                         data-src="https://images.prismic.io/qonto/55a88ce9-bece-4142-af53-21ef92790152_googleplay+button.png?auto=compress,format"
+                         class="lazy">
+                </a></div>
+            </div>
+
+        </div>
+        <div class='footer-trust-pilot-sm tw-mx-auto tw-block md:tw-hidden'>
+            <div class="trustpilot-widget" data-locale="en" data-template-id="53aa8807dec7e10d38f59f32"
+                 data-businessunit-id="5f3be582ed012100015ffda0" data-style-height="105px" data-style-width="100%"
+                 data-theme="light">
+                <a href="https://trustpilot.com/review/qonto.com" target="_blank" rel="noopener">Trustpilot</a>
+            </div>
+
+        </div>
+        <div class='footer-line-separator'></div>
+        <div class='footer-legal footer-legal-links tw-mt-24 md:tw-mt-0'>
+            <a class="body-xsmall footer-legal-link" href="https://qonto.com/en/cookies">Cookies</a>
+            <a class="body-xsmall footer-legal-link" target="_blank" rel="noopener"
+               href="https://qonto.com/documents/QONTO-PRIVACY-POLICY-EN.pdf">Privacy policy</a>
+            <a class="body-xsmall footer-legal-link" href="https://qonto.com/en/tips/security/phishing">Security</a>
+            <a class="body-xsmall footer-legal-link" href="https://qonto.com/en/legal-documents">Legal documents</a>
+        </div>
+        <div class='footer-legal footer-legal-mention body-xsmall tw-mt-24 md:tw-mt-0'>
+            <p>Qonto is a Payment Institution (registration number 16958), supervised by the ACPR (Banque de
+                France).</p>
+        </div>
+    </div>
+</footer>
+
+
+<div class='modal-overlay modal-overlay--light' data-action='toggle-class' data-target-selector='#tooltipModal'
+     data-value='visible' id='tooltipModal'>
+    <div class='modal absolute modal--light modal--tooltip'>
+        <div class='close'>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L19 19" stroke="#9FA3B5" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M1 19L19 1" stroke="#9FA3B5" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class='block relative'>
+            <div class='placeholder'></div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

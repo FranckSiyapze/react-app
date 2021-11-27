@@ -1,0 +1,241 @@
+.nav-pills .nav-link {
+    border-radius: .25rem;
+    background-color: rgba(245, 246, 250, 1);
+    font-weight: 600;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #6B5AED;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6B5AED;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    position: relative;
+}
+
+.pricing::before {
+    position: absolute;
+    content: "";
+    /*background-color: #fae713;*/
+    height: 200px;
+    width: 200px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.pricing::after {
+    position: absolute;
+    content: "";
+    /*background-color: #ff00ba;*/
+    height: 200px;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.card-pricing {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    height: 100%;
+    /*width: 300px;*/
+    background-image: linear-gradient(
+            186.82deg, #f8f8ff 5.33%, #DCEFFF 108.74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.card-pricing::after {
+    position: absolute;
+    content: "";
+    height: max-content;
+    width: 300px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.267);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.card-pricing .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 15%;
+}
+
+.card-pricing .info {
+    /*display: flex;*/
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    padding: 20px 20px;
+    margin: 20px 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.03);
+    transform: translateZ(30px);
+    transition: 0.5s;
+}
+
+.card-pricing .image img {
+    /*width: 100%;*/
+    transition: 0.5s;
+}
+
+.card-pricing:hover .info {
+    transform: translateZ(60px);
+    transition: 0.5s;
+}
+
+.card-pricing:hover .image img {
+    transform: translateZ(60px);
+    transition: 0.5s;
+}
+
+.card-pricing:hover .info p {
+    font-size: 12px;
+}
+
+.color-choose {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.color-choose span {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-choose span.selected::after {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border: 1px solid red;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.color-choose span:nth-child(1) {
+    background-color: rgb(34, 48, 96);
+}
+
+.color-choose span:nth-child(2) {
+    background-color: rgb(255, 123, 0);
+}
+
+.color-choose span:nth-child(3) {
+    background-color: rgb(94, 255, 0);
+}
+
+.color-choose span:nth-child(4) {
+    background-color: rgb(0, 0, 0);
+}
+
+.color-choose span:nth-child(5) {
+    background-color: rgb(251, 255, 0);
+}
+
+.color-choose span:nth-child(6) {
+    background-color: rgb(255, 0, 200);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /*justify-content: space-around;*/
+    margin: 20px 0;
+}
+
+.price input {
+    outline: 0;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
+    font-size: large;
+    cursor: pointer;
+    color: white;
+}
+
+.price sup {
+    font-size: 11px;
+    animation: 0.5s color linear infinite;
+}
+
+.size select {
+    outline: 0;
+    border: 0;
+    padding: 2px 20px;
+    border-radius: 4px;
+    background: #ff00ba;
+    background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
+    color: white;
+}
+
+.size select option {
+    margin: 0 10px;
+    border: 1px solid red;
+}
+
+@keyframes color {
+    from {
+        color: rgb(20, 172, 0);
+    }
+    to {
+        color: black;
+    }
+}
+
+

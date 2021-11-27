@@ -1,0 +1,158 @@
+.cc {
+    position: relative;
+    z-index: 3;
+    background: rgba(8, 144, 255, 0.1) !important;
+}
+
+section.section--spc--background-sibling--top {
+    padding-top: 40px;
+}
+
+section.section--spc--standard--bottom {
+    padding-bottom: 80px;
+}
+
+.stepper_advanced_v2-section {
+    padding: 80px 0px;
+}
+
+.transparent-mode {
+    background: transparent;
+}
+
+.h-container {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.body-regular, .body, .body-bold {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    color: #262a3e;
+}
+
+@media (min-width: 1024px) {
+    .h-container {
+        max-width: 1240px;
+        margin: auto;
+    }
+
+    .lg\:row-center {
+        justify-content: center;
+    }
+
+    .lg\:row-gap {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .lg\:row-12 {
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: auto;
+    }
+
+    .lg\:row-gap > .lg\:col {
+        box-sizing: border-box;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .lg\:row-12 > .lg\:col-span-5 {
+        -ms-flex-preferred-size: 41.6666666667%;
+        flex-basis: 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
+
+    .lg\:row-12 > .lg\:col {
+        -ms-flex-preferred-size: 8.3333333333%;
+        /*flex-basis: 8.3333333333%;
+        max-width: 8.3333333333%;*/
+    }
+
+    .lg\:row-12 .lg\:col-offset-1 {
+        margin-left: 8.3333333333%;
+    }
+
+    .lg\:row-12 > .lg\:col-span-6 {
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .stepper_advanced_v2-section .description {
+        padding-right: 32px;
+    }
+
+    .stepper_advanced_v2-section .step-description {
+        min-height: 72px;
+        margin-bottom: 32px;
+        min-height: 105px;
+    }
+
+    .stepper_advanced_v2-section .step-section {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .stepper_advanced_v2-section .step-container {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        position: relative;
+    }
+
+    .stepper_advanced_v2-section .step-dots {
+        left: 16px;
+        top: 42px;
+        bottom: 13px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stepper_advanced_v2-section .step-dot {
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .stepper_advanced_v2-section .step-num {
+        margin-right: 32px;
+        display: inline-table;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.stepper_advanced_v2-section .active {
+    background: #6b5aed;
+}
+
+.stepper_advanced_v2-section .step-num {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #6b5aed;
+}
+
+.body-small {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #262a3e;
+}
